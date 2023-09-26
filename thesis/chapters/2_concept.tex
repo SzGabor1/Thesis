@@ -1,8 +1,8 @@
-\chapter{Koncepció}
+\chapter{Játékfejlesztés és a Pygame}
 
 \section{Bevezetés a Játékfejlesztés Világába}
 
-A játékfejlesztés a modern szórakoztatóipar egyik legszerteágazóbb és izgalmasabb területe, amely számtalan lehetőséget rejt magában a kreativitás kibontakoztatására és az élmények megteremtésére. Ennek a fejezetnek a kezdetén tekintsünk részletesebben arra, hogy mit jelent játékot fejleszteni, milyen kihívásokkal jár, és milyen lehetőségeket kínál.
+A játékfejlesztés a modern szórakoztatóipar egyik legszerteágazóbb és izgalmasabb területe, amely számtalan lehetőséget rejt magában a kreativitás kibontakoztatására és az élmények megteremtésére. Ennek a fejezetnek az elején nézzük meg, hogy mit jelent játékot fejleszteni, milyen kihívásokkal jár, és milyen lehetőségeket kínál.
 
 \subsection{Mit jelent játékot fejleszteni?}
 Játékot fejleszteni egy olyan folyamat, amely során virtuális vagy fizikai játékokat tervezünk, készítünk és tesztelünk. Ezek a játékok szórakoztatnak, kihívások elé állítanak, vagy éppen történeteket mesélnek el a játékosoknak. A játékfejlesztés során számos különböző területet érintünk, mint például a grafika, a hang, a programozás, a játéktervezés és a narratíva.
@@ -48,34 +48,45 @@ Ez a fejezet célja, hogy bevezessen a játékfejlesztés izgalmas világába, m
 
 \section{Játékfejlesztő Könyvtárak és Eszközök}
 
-A játékfejlesztéshez elérhető könyvtárak és eszközök rendkívül fontosak a fejlesztők számára, hiszen segítenek a játékok fejlesztésében és optimalizálásában. Ebben a részben áttekintjük néhány közismert könyvtárat és eszközt, amelyeket játékfejlesztéshez használnak.
+A játékfejlesztéshez elérhető könyvtárak és eszközök rendkívül fontosak a fejlesztők számára, hiszen segítenek a játékok fejlesztésében és optimalizálásában. Ebben a részben áttekintünk néhány közismert könyvtárat és eszközt, amelyeket játékfejlesztéshez használnak.
 
 \subsection{Unity: A 3D játékfejlesztés platformja}\cite{unity-doc}
-Az Unity az egyik legnépszerűbb és legelismertebb játékfejlesztési platform, amely lehetővé teszi 2D és 3D játékok készítését. Az Unity fejlesztői számára egy teljes körű fejlesztői környezetet biztosít, amely integrált fejlesztői eszközöket, grafikai motorokat és folyamatos támogatást tartalmaz.
+Az Unity a játékfejlesztők körében rendkívül népszerű, mivel egyszerűen kezelhető és széles körű lehetőségeket kínál a játékok létrehozásához. A platform komplex fejlesztői eszközökkel rendelkezik, például szkriptelési lehetőségekkel és beépített folyamatkezelővel, amelyek megkönnyítik a játékfejlesztést.
 
-Az Unity könnyen használható, és támogatja a cross-platform fejlesztést, így játékokat készíthetünk számítógépekre, mobil eszközökre és konzolokra egyaránt. Emellett erős vizualizációs és fizikai motorokat is kínál, amelyek segítik a valósághű játékélmény kialakítását.
+Az Unity támogatja a 2D és 3D játékok készítését egyaránt, így a fejlesztők szabadon választhatják meg a stílust és a műfajt. A platform lehetővé teszi a cross-platform fejlesztést, amely azt jelenti, hogy egyetlen projektből készíthetünk játékokat különböző platformokra, például Windows, iOS, Android vagy konzolokra.
 
-\subsection{Java: Népszerű programozási nyelv játékfejlesztéshez}\cite{java-doc}
-Java egy platformfüggetlen, objektumorientált programozási nyelv, amelyet széles körben használnak játékfejlesztéshez, különösen Android platformra. Java játékok készítéséhez a Java ME (Micro Edition) keretrendszert is felhasználhatjuk, amelyet mobiljátékokhoz és egyéb kis méretű alkalmazásokhoz fejlesztettek ki.
+Az Unity erős grafikai motorokkal rendelkezik, amelyek lehetővé teszik a gyönyörű és részletes grafikák létrehozását. Emellett fizikai motorjai valósághű mozgást és ütközéseket biztosítanak, ami a játékélményt még valóságosabbá teszi.
 
-A Java platformfüggetlensége lehetővé teszi, hogy a játékokat több platformra, például számítógépre és mobil eszközökre is exportáljuk. A Java ME segítségével kifejezetten mobiljátékokat is fejleszthetünk. A Java erős közösséggel rendelkezik, így könnyű hozzáférést nyújt különböző fejlesztői eszközökhöz és könyvtárakhoz.
+A folyamatos támogatás és a nagy közösség miatt az Unity egy kiváló választás a játékfejlesztők számára, akik minőségi játékokat szeretnének létrehozni a különböző platformokon. Az Unity segítségével a fejlesztők könnyen hozzáférhetnek az új funkciókhoz és frissítésekhez, hogy folyamatosan fejleszthessék játékaikat.
+\subsection{Java: Népszerű választás játékfejlesztők számára}\cite{java-doc}
+A Java egy platformfüggetlen, objektumorientált programozási nyelv, amelyet a játékfejlesztésben is széles körben alkalmaznak, különösen az Android platformon. A Java játékok fejlesztéséhez különféle fejlesztői eszközök és könyvtárak állnak rendelkezésre.
 
-\subsection{C\#: Népszerű programozási nyelv játékfejlesztéshez}
-C\# egy modern, objektumorientált programozási nyelv, amelyet széles körben használnak játékfejlesztéshez, különösen az Unity motorban. Az Unity C\#-t használ a játéklogika és a szkriptelés megvalósításához, ami lehetővé teszi a fejlesztők számára a cross-platform játékok készítését.
+Például, a Java játékok fejlesztéséhez számos integrált fejlesztői környezet (IDE) érhető el, mint például az Android Studio vagy a Eclipse, amelyek segítenek a játékok tervezésében és kódolásában. Ezek az IDE-k számos hasznos eszközt és szolgáltatást kínálnak a fejlesztőknek, például hibakeresőt és kódszerkesztőt.
 
-C\# erős és könnyen tanulható nyelv, amely támogatja a modern programozási paradigmákat. Az Unity motor segítségével a C\# nyelvet használó fejlesztők könnyedén exportálhatnak játékokat több platformra, például számítógépekre, konzolokra és mobil eszközökre.
-\subsection{C++: A játékfejlesztők egyik kedvelt nyelve}\cite{cpp-doc}
-A C++ egy erős és hatékony programozási nyelv, amelyet gyakran alkalmaznak játékfejlesztéshez, különösen a nagy teljesítményű játékokhoz és konzolplatformokhoz. A C++ segítségével közvetlenül a hardverre lehet programozni, ami nagy szabadságot és teljesítményt biztosít.
+A Java játékok grafikai részének fejlesztéséhez számos grafikai könyvtár is rendelkezésre áll, például a LibGDX vagy a JavaFX. Ezek a könyvtárak lehetővé teszik a játékgrafikák létrehozását, animációk kezelését és a felhasználói felület kialakítását.
 
-A C++ a játékfejlesztők egyik kedvelt nyelve, mivel lehetővé teszi a nagy teljesítményű játékok létrehozását és a hardverhez való közvetlen hozzáférést. Emellett számos játékfejlesztési könyvtár és motor támogatja a C++ nyelvet.
+Emellett a Java egy erős közösséggel rendelkezik, ami azt jelenti, hogy a fejlesztők könnyen hozzáférhetnek különböző fejlesztői eszközökhöz és könyvtárakhoz, amelyek segítik a játékfejlesztést. Példaként említhetők a játékfejlesztéshez használt függvénykönyvtárak, például a LWJGL (Lightweight Java Game Library), amely lehetővé teszi a háromdimenziós játékok fejlesztését Java nyelven.
+\subsection{C\#: Kiemelt szerepű programozási nyelv a játékfejlesztők körében}\cite{csharp-doc}
 
-Ezen eszközök és nyelvek kiválasztása a projekt specifikus igényeitől és a fejlesztői készségektől függ. Fontos megérteni, hogy minden eszköznek és nyelvnek megvannak a saját előnyei és korlátai, és azokat a projekt céljaihoz és a csapat készségeihez kell igazítani.
+A C\# egy modern, objektumorientált programozási nyelv, melyet széles körben alkalmaznak a játékfejlesztés területén, különösen az Unity játékmotorral. Az Unity egyike a legnépszerűbb játékfejlesztő platformoknak, és C\#-t használ a játéklogika és szkriptelés megvalósításához, így lehetővé téve a fejlesztők számára a cross-platform játékok készítését.
 
+A C\# rendelkezik egy erős és fejlett fejlesztői környezettel, amely segíti a fejlesztőket a játéktervezésben és kódolásban. Az integrált fejlesztői eszközök, például a Visual Studio, hatékony eszközöket nyújtanak a kódírás, hibakeresés és teljesítményoptimalizálás terén.
+
+Az Unity és C\# együttes használata lehetővé teszi a fejlesztők számára a könnyű és hatékony játékfejlesztést számos platformra, mint például számítógépek, mobil eszközök és konzolok. Ez a kombináció erős grafikai motorokkal, fizikai motorokkal és egyéb eszközökkel is rendelkezik, amelyek segítik a játékélmény kialakítását és optimalizálását.
+
+Mivel a C\# egy népszerű és jól támogatott nyelv a játékfejlesztésben, a fejlesztők könnyen hozzáférhetnek különböző fejlesztői eszközökhöz és könyvtárakhoz, amelyek elősegítik a játékfejlesztést és a játéktervezést.
+\subsection{C++: A régebbi játékok elengedhetetlen nyelve}\cite{cpp-doc}
+
+A C++ egy erőteljes és hatékony programozási nyelv, amely gyakran előfordul a játékfejlesztés világában, különösen a nagy teljesítményű játékok és konzolplatformok esetében. A C++ nyelv lehetővé teszi a fejlesztők számára, hogy közvetlenül a hardverre programozzanak, ami rendkívül nagy szabadságot és teljesítményt nyújt.
+
+A játékfejlesztők körében a C++ kiemelkedően kedvelt nyelv, mivel lehetőséget nyújt a nagy teljesítményű játékok létrehozására és a hardverrel való közvetlen kapcsolat kialakítására. Számos játékfejlesztő könyvtár és motor támogatja a C++ nyelvet, amelyek segítik a játékfejlesztőket a projektjeik gyorsabb és hatékonyabb megvalósításában.
+
+Az eszközök és nyelvek kiválasztása a projekt specifikus igényektől és a fejlesztői készségektől függ. Fontos megérteni, hogy minden eszköznek és nyelvnek megvannak a saját előnyei és korlátai, és ezeket a projekt céljaival és a fejlesztőcsapat készségeivel kell összeegyeztetni annak érdekében, hogy a lehető legjobb játékélményt nyújtsák a játékosoknak.
 
 
 \section{Python a játékfejlesztésben}
 
-A Python egy kiválóan használható programozási nyelv a játékfejlesztéshez, és sok előnnyel rendelkezik a fejlesztők és a játéktervezők számára. Ebben a fejezetben kifejtjük, miért érdemes Pythonnal dolgozni játékok tervezésekor, és milyen alapvető tulajdonságok és lehetőségek teszik ezt a nyelvet vonzóvá a játékfejlesztés világában.
+A Python egy kiválóan használható programozási nyelv a játékfejlesztéshez, és sok előnnyel rendelkezik a fejlesztők és a játéktervezők számára. Ebben a fejezetben kifejtem, miért érdemes Pythonnal dolgozni játékok tervezésekor, és milyen alapvető tulajdonságok és lehetőségek teszik ezt a nyelvet vonzóvá a játékfejlesztés világában.
 
 \subsection{Miért jó a Python?}
 1. Olvashatóság és Egyszerűség:
@@ -110,13 +121,22 @@ A Python modulokat és csomagokat használ a kód szervezéséhez és strukturá
 \end{itemize}
 
 \subsection{A Python és a Játékfejlesztés}
-Pythonnal a játékfejlesztők számos különböző könyvtárat és keretrendszert használhatnak játékok készítéséhez. Egyik ilyen könyvtár a "Pygame", amely egy népszerű és könnyen tanulható keretrendszer a 2D játékokhoz. A Pygame számos olyan eszközt és funkciót nyújt, amelyek segítik a játékfejlesztőket a grafikai megjelenítés, hangkezelés és inputkezelés terén.
+A Python programozási nyelvet egyre gyakrabban alkalmazzák a játékfejlesztés területén. Bár eredetileg nem a legnépszerűbb választás volt ebben a szektorban, az utóbbi években számos előnye miatt kezdett teret hódítani.
 
-A Python és a Pygame kombinációja lehetővé teszi a játékfejlesztők számára, hogy gyorsan és hatékonyan hozzanak létre játékokat, és egy erős fejlesztői közösség és dokumentáció áll rendelkezésre a támogatáshoz és az útmutatáshoz. Az egyszerűség és az olvashatóság révén a Python segíti a fejlesztőket abban, hogy a játékmechanizmusokra és a játékélményre koncentráljanak anélkül, hogy túl sok időt kellene tölteni a kód megértésével és karbant
+A Python játékfejlesztésre való áttérést elősegíti az egyszerűsége és olvashatósága, amely lehetővé teszi a fejlesztők számára, hogy a játékmechanizmusokra és a játékélményre összpontosítsanak, anélkül hogy túlzottan mélyen kellene merülniük a technikai részletekbe.
 
+Ezenkívül a Python platformfüggetlen, így a fejlesztők könnyedén exportálhatják játékaikat különböző rendszerekre, például Windows, macOS vagy Linux alá, ami tovább növeli a nyelv vonzerejét a játékfejlesztők számára.
+
+Mivel a Python játékfejlesztés területén egyre népszerűbbé válik, egyre több játék fejlesztése zajlik ezen a platformon, és továbbra is új lehetőségek és fejlesztői eszközök válnak elérhetővé a játékfejlesztők számára.
 
 \section{Pygame}
-A Pygame egy olyan Python modulokból álló gyűjtemény, amely a videójátékok és multimédiás programok fejlesztését teszi lehetővé a Python programozási nyelven. A Pygame lényegében egy réteget ad az SDL (Simple DirectMedia Layer) kiváló könyvtár fölé, amely lehetővé teszi, hogy teljesen kiépített játékokat és multimédiás alkalmazásokat hozzunk létre Pythonban.
+A Python programozási nyelv számos lehetőséget kínál játékfejlesztőknek a játékok készítéséhez, és az egyik ilyen lehetőség a "Pygame" nevű keretrendszer. A Pygame egy népszerű és könnyen elsajátítható eszköz a 2D játékok fejlesztéséhez. Ez a keretrendszer számos funkciót és eszközt kínál a grafikai megjelenítés, hangkezelés és inputkezelés terén, így a fejlesztők könnyedén kezelhetik ezeket a fontos aspektusokat.
+
+A Python és a Pygame kombinációja kiválóan alkalmas arra, hogy gyorsan és hatékonyan játékokat hozzunk létre. A Python nyelv egyszerűsége és olvashatósága lehetővé teszi, hogy a fejlesztők a játékmechanizmusokra és a játékélményre összpontosítsanak, anélkül hogy túlzott időt kellene fordítaniuk a kód bonyolultságának kezelésére.
+
+Az erős fejlesztői közösség és a dokumentáció elérhetősége további előnyt jelent a Pygame használatakor. A fejlesztők könnyen hozzáférhetnek támogatáshoz és útmutatáshoz, ami segíti őket a projektjük sikerességében.
+
+Összességében a Pygame egy kiváló eszköz a Python használói számára, akik játékokat szeretnének fejleszteni. Az egyszerűsége és a sokoldalúsága lehetővé teszi a kreatív játékfejlesztést anélkül, hogy a technikai részletekre túlzottan összpontosítanánk.
 \subsection{Pygame lehetőségei}
 A Pygame rendkívül sokoldalú eszközöket és lehetőségeket kínál a játékfejlesztők számára:
 
@@ -134,7 +154,7 @@ Egyszerűség: A Pygame könnyen megtanulható és használható, és kiválóan
 
 Modularitás: A Pygame lehetőséget ad arra, hogy a különböző modulokat külön-külön inicializálja és használja, így testreszabhatja a fejlesztést az igényeinek megfelelően.
 
-\subsection{Pygame További Tudnivalók}
+\subsection{További tudnivalók a Pygame-ről}
 
 Moduláris Felépítés
 A Pygame rendkívül moduláris felépítésű, ami azt jelenti, hogy könnyen testre szabható és bővíthető. A fejlesztők kiválaszthatják azokat a modulokat, amelyekre szükségük van a projektjükben, és elhagyhatják azokat, amelyekre nincs szükségük. Ezáltal minimalizálhatják a projekt méretét és optimalizálhatják a teljesítményt.
@@ -150,32 +170,29 @@ A Pygame olyan egyszerűen használható, hogy akár gyerekek és fiatalabb ját
 
 \subsection{Célcsoport}
 
-Pygame: Általános célú keretrendszerként szolgál, ami azt jelenti, hogy szinte bármilyen típusú játék készítéséhez használható. Legyen szó akció-játékról, platformjátékról, vagy akár puzzle-játékról, a Pygame alkalmas erre.
-Ren'Py: A Ren'Py viszont kifejezetten a szövegalapú visual novelek (interaktív történetek) készítésére specializálódott. Itt a fő hangsúly a narratíván, karakterek párbeszédein és képeken van.
+Általános célú keretrendszerként szolgál, ami azt jelenti, hogy szinte bármilyen típusú játék készítéséhez használható. Legyen szó akció-játékról, platformjátékról, vagy akár puzzle-játékról, a Pygame alkalmas erre.
+A Ren'Py viszont kifejezetten a szövegalapú visual novelek (interaktív történetek) készítésére specializálódott. Itt a fő hangsúly a narratíván, karakterek párbeszédein és képeken van.
 
 \subsection{Felhasználói felület}
 
-Pygame: A Pygame használata viszonylag egyszerű, de bizonyos alapvető programozási ismeretekre van szükség. Fejlesztőknek ismeretekre van szükségük a Python nyelvben és a játékfejlesztés alapjaiban.
-Ren'Py: A Ren'Py használata rendkívül intuitív és egyszerű, még a programozásban nem jártas felhasználók számára is. Ez teszi lehetővé a könnyű interaktív szöveges játékok létrehozását.
+Bár a Pygame keretrendszer használata viszonylag egyszerű, az alapvető programozási ismeretek elengedhetetlenek. A fejlesztőknek szükségük van jártasságra a Python programozási nyelvben és az alapvető játékfejlesztési technikákban.
 
+A Ren'Py használata rendkívül intuitív és könnyen érthető, még azok számára is, akiknek nincsen tapasztalata a programozásban. Ennek köszönhetően a felhasználók könnyedén létrehozhatnak interaktív szöveges játékokat anélkül, hogy mély programozási ismeretekkel rendelkeznének.
 \subsection{Felépítmény}
 
-Pygame: A Pygame egy objektumorientált keretrendszer, ahol a játékot különböző objektumokból építik fel, és a fejlesztőknek az objektumok közötti interakciókat kell kezelniük.
-Ren'Py: A Ren'Py egy szöveg-alapú keretrendszer, ahol a játékot szövegből és grafikából építik fel. Az objektumok és interakciók kezelése itt kevésbé hangsúlyos, a fókusz a narratívára összpontosul.
+A Pygame egy objektumorientált keretrendszer, ahol a játékot különböző objektumokból építik fel, és a fejlesztőknek az objektumok közötti interakciókat kell kezelniük.
+A Ren'Py egy szöveg-alapú keretrendszer, ahol a játékot szövegből és grafikából építik fel. Az objektumok és interakciók kezelése itt kevésbé hangsúlyos, a fókusz a narratívára összpontosul.
 
 \subsection{Funkciók}
 
-Pygame: A Pygame számos alapvető funkciót kínál, mint például a grafika, a hang és a bevitel kezelése. Fejlesztőknek nagyobb szabadságot ad azáltal, hogy saját logikát és rendszereket hozhatnak létre.
-Ren'Py: A Ren'Py speciális funkciókat kínál a visual novelek készítéséhez, mint például a szöveg effektek, a zene és a képkockák kezelése. A keretrendszer célja a visual novel műfaj specifikus igényeinek kielégítése.
+A Pygame számos alapvető funkciót kínál, mint például a grafika, a hang és a bevitel kezelése. Fejlesztőknek nagyobb szabadságot ad azáltal, hogy saját logikát és rendszereket hozhatnak létre.
+
+A Ren'Py speciális funkciókat kínál a visual novelek készítéséhez, mint például a szöveg effektek, a zene és a képkockák kezelése. A keretrendszer célja a visual novel műfaj specifikus igényeinek kielégítése.
 
 \subsection{Egyéb szempontok}
 
-Pygame: A Pygame nyílt forráskódú és ingyenesen elérhető, valamint több platformon futtatható, beleértve a Linuxot, Windowst és MacOS-t is. Rugalmas és testreszabható, ami lehetővé teszi a fejlesztők számára a saját játékmotorjuk létrehozását.
-Ren'Py: A Ren'Py mellett elérhető kereskedelmi licenc is, amely további támogatást és lehetőségeket kínál. Főként Windowson és macOS-en futtatható, és kifejezetten a visual novelek készítésére specializált, széleskörű szövegkezelési funkciókat nyújt.
-
-Játékstílus: A Pygame és a Ren'Py különböző játékstílusokhoz alkalmas. A Pygame ideális akció-, platform- és puzzle-játékokhoz, míg a Ren'Py a visual novelekhez.
-Tapasztalat: A Pygame használatához bizonyos alapvető programozási ismeretekre van szükség. A Ren'Py viszont könnyen használható még a programozásban nem jártas felhasználók számára is.
-Költség: A Pygame nyílt forráskódú és ingyenesen elérhető. A Ren'Py mellett elérhető kereskedelmi licenc is, amely további támogatást és lehetőségeket kínál.
+A Pygame nyílt forráskódú és ingyenesen elérhető, valamint több platformon futtatható, beleértve a Linuxot, Windowst és MacOS-t is. Rugalmas és testreszabható, ami lehetővé teszi a fejlesztők számára a saját játékmotorjuk létrehozását.
+A Ren'Py mellett elérhető kereskedelmi licenc is, amely további támogatást és lehetőségeket kínál. Főként Windowson és macOS-en futtatható, és kifejezetten a visual novelek készítésére specializált, széleskörű szövegkezelési funkciókat nyújt.
 
 \subsection{Összegzés}
 
@@ -188,36 +205,27 @@ Tapasztalat: Mennyi programozási tapasztalattal rendelkezik?
 Költség: Mennyi pénzt szán a keretrendszerre?
 A megfelelő keretrendszer kiválasztása segíthet abban, hogy gyorsabban és könnyebben készítsen professzionális minőségű játékokat.
 
-\section{Az Elérhető Eredmények}
+\section{Az Elérhető Eredmények és Oktatás}
 
 A Pygame és más eszközökkel készített játékok bemutatása nyit egy ablakot a játékfejlesztés izgalmas világába. Ebben a fejezetben megismerkedünk néhány sikeres projekttel és kreatív alkotással, amelyeket a Pygame és más hasonló eszközök segítségével hoztak létre. Emellett megvizsgáljuk, hogy milyen kutatási és tanulási célkitűzéseket lehet elérni ezen eszközökkel.
 
-\subsection{Pygame és Más Eszközökkel Készített Játékok Bemutatása}
+\subsection{Pygamemel Készített Sikeres Játékok}
 A Pygame egy olyan eszköz, amely lehetővé teszi a fejlesztők számára, hogy kreatív és sokoldalú játékokat hozzanak létre. Néhány példa sikeres Pygame projektekre:
 
 \begin{itemize}
     
+    \item Stardew Valley (2016): Egy életszimulátor, amelyben a játékos egy kisvárosban él és gazdálkodik. A játékot a játékmenetéért, a karaktereiért és a világépítéséért dicsérték.
     
-    \item\"Flappy Bird\" klón: Az egyszerű, mégis addiktív játékstílus népszerűségét kihasználva sok fejlesztő készített saját változatot a Pygame segítségével.
+    \item Celeste (2018): Egy nehéz platformjáték, amelyben a játékos egy fiatal nőt irányít, aki megpróbál felmászni egy hegyre.
     
-    \item\"Bastion\" (Supergiant Games): A \"Bastion\" egy kritikailag elismert akció-RPG, amelynek fejlesztése során a Pygame-t használták a prototípusok készítéséhez és a játékmechanikák teszteléséhez.
+    \item Super Meat Boy (2010): Egy gyors tempójú platformjáték, amelyben a játékos egy húsból készült fiút irányít, aki megpróbál eljutni egy másik húsból készült lányhoz.
     
-    \item\"Darwinia\" (Introversion Software): A \"Darwinia\" egy sikeres stratégiai játék, amely részben a Pygame inspirációjából született, bár más eszközökkel fejlesztették.
-\end{itemize}
+    \item Undertale (2015): Egy indie szerepjáték, amelyben a játékos egy kisfiút irányít, aki egy földalatti világba esik.
 
-\subsection{Sikeres Projektek és Kreatív Alkotások Példái}
-A játékfejlesztők és alkotók széles skáláját inspirálta a lehetőség, hogy Pygame és hasonló eszközökkel alkotói ötleteiket valósítsák meg. Néhány kreatív példa:
-\begin{itemize}
-     
-    \item\"Undertale\" (Toby Fox): Az \"Undertale\" egy különleges és elbűvölő szerepjáték, amely különböző stílusokat és interakciós mechanizmusokat kombinál a Pygame segítségével.
-    
-    \item\"Minecraft\" (Mojang): Bár a \"Minecraft\" egy saját motorral rendelkező játék, a Pygame inspirálta a megjelenésekor, és az alfa verziója Pygame segítségével készült.
+
+    \item\"Minecraft\" (Mojang): Bár a \"Minecraft\" egy saját motorral rendelkező játék, a Pygame inspirálta a megjelenésekor, és az alfa verziója Pygame segítségével készült.  A játék eredetileg egy egyszerű blokképítő játék volt, amelyben a játékosok szabadon építhettek és alkothattak. A játék később fejlődött, áttért a Java nyelvre és egy hatalmas, többjátékos sandbox világgá vált.
     
 \end{itemize}
-Kreatív vizuális művészetek: A Pygame és hasonló eszközök lehetővé teszik a művészek számára, hogy interaktív műveket hozzanak létre, amelyek például installációk, képkollázsok vagy interaktív festmények.
-
-\subsection{Kutatási és Tanulási Célkitűzések}
-A Pygame és más játékfejlesztő eszközök használata több területen is alkalmazható kutatási és tanulási célokra:
 
 \subsection{Oktatás} 
 A Pygame és más játékfejlesztő eszközök egyre népszerűbbek az oktatásban. A játékok fejlesztése során a diákok számos készséget sajátíthatnak el, például:
@@ -235,64 +243,46 @@ A játékfejlesztés egy élvezetes és motiváló módja a készségek elsaját
 Példák a Pygame oktatási alkalmazására:
 \begin{itemize}
     
-    \item Iskolák és egyetemek: A Pygame-et egyre több iskolában és egyetemen használják a játékfejlesztés tanítására.
-    \item Kódhatalók: A Pygame-et gyakran használják kódhatalók és játékfejlesztő versenyek során.
-    \item Öntanulás: A Pygame egy ingyenes és nyílt forráskódú eszköz, amely alkalmas az öntanulásra.
+    \item Iskolák és egyetemek: A Pygame-et egyre több iskolában és egyetemen használják a játékfejlesztés tanítására. Az Egyesült Államokban például az MIT, UCLA, USC.
+    
+    \item Kreatív műhelyek és kurzusok: Számos kreatív műhely és kurzus használja a Pygame-et a művészet és programozás összekapcsolására. Ezek a kurzusok lehetőséget nyújtanak diákoknak és tanulóknak arra, hogy saját játékokat vagy interaktív művészeti alkotásokat hozzanak létre.
+
+    \item Programozó iskolák és bootcamp-ok: Olyan intézmények, mint a Codecademy vagy a General Assembly, alkalmazzák a Pygame-et az alapvető programozási készségek oktatására és gyakorlására. Ezen platformokon keresztül a hallgatók interaktív módon tanulhatnak meg programozni.
+
 \end{itemize}
 
 \subsection{Kognitív kutatás}
 A játékok kiváló eszközök lehetnek a kognitív folyamatok, például a tanulás, a memória és a döntéshozatal tanulmányozására. A játékfejlesztők gyakran használnak játékokat a kognitív folyamatok tesztelésére és modellezésére.
 
-Példák a Pygame kognitív kutatási alkalmazására:
+Példák a jétékok kognitív kutatási alkalmazására:
 \begin{itemize}
     
-    \item Tanulás: A játékokat használják a tanulás hatékonyságának tanulmányozására.
-    \item Memória: A játékokat használják a memória működésének tanulmányozására.
-    \item Döntéshozatal: A játékokat használják a döntéshozatal folyamatának tanulmányozására.
-\end{itemize}
-\subsection{Szórakoztató és kreatív projektek}
-A játékfejlesztés egy kiváló módja a szórakozásnak és a kreativitás kifejezésének. A játékfejlesztő eszközök lehetővé teszik az emberek számára, hogy saját játékaikat készítsék el, amelyeket megoszthatnak másokkal.
+    \item Memóriajátékok: Memóriajátékokkal lehet tanulmányozni a munkamemória kapacitását és az emlékezőképességet. A játék során megfigyelhető, hogy a résztvevők hogyan képesek megjegyezni és visszakeresni különböző információkat.
 
-Példák a Pygame szórakoztató és kreatív projektekre:
-\begin{itemize}
+    \item Ügyességi játékok: Ügyességi játékokkal lehet vizsgálni a vizuális-motoros koordinációt és a reakcióidőt. Az ilyen játékokban a feladat lehet például gyorsan mozgó célpontok eltalálása.
     
-    \item Egyéni projektek: Az emberek gyakran használják a Pygame-et egyéni játékok készítésére.
-    \item Csapatprojektek: A Pygame-et gyakran használják csapatjátékok készítésére.
-    \item Közösségi projektek: A Pygame-et gyakran használják közösségi játékok készítésére.
+    \item Döntéshozatali játékok: Olyan játékok, amelyekben a résztvevőknek döntéseket kell hozniuk, lehetővé teszik a döntéshozatali folyamatok tanulmányozását. Például, egy stratégiai játékban lehet vizsgálni, hogyan hatnak a játékosok döntéseikre és stratégiáikra.
+    
+    \item Logikai játékok: Logikai játékokkal lehet vizsgálni a logikai gondolkodás és problémamegoldó képesség különböző aspektusait. Például, a Sudoku vagy a keresztrejtvények segítségével lehet tanulmányozni a logikai következtetést.
+    
+    \item Tanulási játékok: Olyan oktatójátékok, amelyek interaktívan segítik a tanulást, például nyelvtanulás vagy matematikai készségek fejlesztése. Ezek a játékok lehetővé teszik a kutatók számára, hogy kövessék a tanulás folyamatát és az eredményeket.
+    
+    \item Szimulációs játékok: Szimulációs játékokkal lehet vizsgálni, hogyan befolyásolja a játékosok döntéseit és viselkedését egy adott helyzet vagy környezet. Például, egy gazdasági szimulációval lehet tanulmányozni a pénzügyi döntéshozatali folyamatokat.
+    
+    \item Kognitív terheléses játékok: Ezek a játékok lehetővé teszik a kognitív terhelés vizsgálatát, például olyan feladatokkal, amelyek közben a résztvevőknek más információkat is kell kezelniük vagy emlékezniük.
+    
+    \item Figyelemjátékok: A figyelemjátékok segítségével lehet tanulmányozni a figyelem koncentrációját és osztott figyelmet. Ezek a játékok gyakran tartalmaznak feladatokat, amelyeknél a résztvevőknek több dologra kell egyszerre figyelniük.
+
 \end{itemize}
+
 \subsection{Prototípusok és koncepciók}
-A játékfejlesztés lehetővé teszi prototípusok készítését és koncepciók tesztelését a valóságban. A prototípusok és koncepciók tesztelése segíthet a fejlesztőknek abban, hogy javítsák a játékaikat, mielőtt azok nagyszabású fejlesztésbe kerülnek.
-
-Példák a Pygame prototípusok és koncepciók tesztelésére:
-\begin{itemize}
-    
-    \item Új játékmechanikák: A Pygame-et gyakran használják új játékmechanikák tesztelésére.
-    \item Új játékstílusok: A Pygame-et gyakran használják új játékstílusok tesztelésére.
-    \item Új játékvilágok: A Pygame-et gyakran használják új játékvilágok tesztelésére.
-\end{itemize}
+A játékfejlesztés lehetővé teszi prototípusok készítését és koncepciók tesztelését a valóságban. A prototípusok és koncepciók tesztelése segíthet a fejlesztőknek abban, hogy javítsák a játékaikat, mielőtt azok nagyszabású fejlesztésbe kerülnek. A pygamet gyakran használják új játékmechanikák, játékstílusok tesztelésére, mivel gyorsan és hatékonyan lehet vele prototípusokat készíteni.
 
 \subsection{Következtetés}
 
-A Pygame és más játékfejlesztő eszközök széles körű lehetőségeket kínálnak az oktatásban, a kognitív kutatásban, a szórakozásban és a kreativitásban. A megfelelő eszköz kiválasztásával bárki készíthet saját játékokat, függetlenül attól, hogy milyen tapasztalattal rendelkezik.
-
+A Pygame és hasonló játékfejlesztő eszközök széles körű alkalmazást kínálnak a modern társadalomban. Ezek az eszközök nem csupán játékok készítésére használhatók, hanem hatékony eszközök a tanulás, a kutatás és a kreativitás terén is. A játékosított tanulás révén motiválóbbá tehetjük az oktatást, míg a kognitív kutatásban lehetőséget nyújtanak az emberi kogníció tanulmányozására. Emellett a játékfejlesztés lehetőséget ad az ötletelésre és a kreatív kifejezésre is. Bármilyen szinten is legyen valakinek a játékfejlesztés terén, a Pygame és hasonló eszközök segítségével saját projekteket hozhat létre és járulhat hozzá a tudásunk bővítéséhez és a különböző területeken való alkalmazásukhoz.
 
 
 \section{Összegzés}
 
-A fejezet tartalma témától függően változhat. Az alábbiakat attól függően különböző arányban tartalmazhatják.
-\begin{itemize}
-\item Irodalomkutatás. Amennyiben a dolgozat egy módszer kidolgozására, kifejlesztésére irányul, akkor itt lehet részletesen végignézni (módszertani vagy időrendi bontásban), hogy az eddigiekben milyen eredmények születtek a témakörben.
-\item Technológia. Mivel jellemzően kutatásról vagy szoftverfejlesztésről van szó, ezért annak a jellemző elemeit, technikai részleteit itt kell bemutatni.
-Ez tehát egy módszeres bevezetés ahhoz, hogy ha valaki nem jártas a témakörben, akkor tudja, hogy a dolgozat milyen aktuálisan elérhető eredményeket, eszközöket használt fel.
-\item Piackutatás. Bizonyos témáknál új termék vagy szolgáltatás kifejlesztése a cél.
-Ekkor érdemes annak alaposan utánanézni, hogy aktuálisan milyen eszközök érhetők el a piacon.
-Ez szoftverek esetében a hasonló alkalmazások bemutatását, táblázatos formában történő összehasonlítását jelentheti.
-Szerepelhetnek képek és észrevételek a viszonyításként bemutatott alkalmazásokhoz.
-\item Követelmény specifikáció. Külön szakaszban érdemes részletesen kitérni az elkészítendő alkalmazással kapcsolatos követelményekre.
-Ehhez tartozhatnak forgatókönyvek (\textit{scenario}-k).
-A szemléletesség kedvéért lehet hozzájuk képernyőkép vázlatokat is készíteni, vagy a használati eseteket más módon szemléltetni.
-\end{itemize}
-
-
-Az olvasóról annyit feltételezhetünk, hogy programozásban valamilyen szinten járatos, és a matematikai alapfogalmakkal sem ebben a dolgozatban kell megismertetni.
-A speciális eszközök, programozási nyelvek, matematikai módszerek és jelölések persze jó, hogy ha említésre kerülnek, de nem kell nagyon belemenni a közismertnek tekinthető dolgokba.
+A játékok nagyon hasznos eszközök, amelyeket a gyerekek és felnőttek is élveznek. Rengeteg hasznos készséget lehet elsajátítani játszás során, ez a számítógépes játékokkal sincsen másképp. A kreatív és kihívást kedvelő embereknek a játékfejlesztés egy kíváló lehetőség arra, hogy kipróbálják magukat és megmutassák kreativitásukat. A játékfejlesztés során a fejlesztők számos készséget elsajátíthatnak, például a programozást, a dizájnt és a projektmenedzsmentet. A játékfejlesztés egyre népszerűbb a modern társadalomban, és egyre több ember kezd el játszani ezért a fejlesztőkre is igen nagy az igény. Ez a fajta munka rengeteg lehetőséget kínál a kreativitás kibontakoztatására és a tanulás és fejlődés terén. A jövőben is szükség lesz a játékfejlesztésben jártas emberekre, hiszen ez örökké velünk fog maradni valamilyen formában.
