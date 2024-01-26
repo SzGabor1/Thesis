@@ -157,7 +157,7 @@ Megtalálható még obstacle, attack, és attackable felület csoportok is amely
 Ez az osztály egy szülő osztály, ami azt jelenti, hogy ebből származnak le más osztályok és felhasználják minden tulajdonságát illetve metódusait it.  
 Három fontos metódussal rendelkezik az egyik a mozgás kezelése, másik egy Sin függvény alapján ad vissza 0-255 értéket, ez később a kapott sebzés kijelzésére szolgál. A harmadik metódus az ütközés érzékelésre, kezelésére szolgál.
 
-A 4.2.-es programkód bemutatja a megvalósítását az ütközéskezelésnek. Ez lényegében úgy műkdöik, hogy nézzük az entitás mozgási irányát függőlegesen, vagy vízszintesen közlekedik, és az adott iránytól függően vizsgáljuk, hogy az entitás hitbox-a ütközik-e valamelyik akadállyal. Ha igen akkor az entitás irány szerinti hitbox-át az akadály ellenkező irányű hitbox-ához igazítjuk, így megakadályozva az áthaladást. 
+Az ütközés érzékelés lényegében úgy műkdöik, hogy nézzük az entitás mozgási irányát függőlegesen, vagy vízszintesen közlekedik, és az adott iránytól függően vizsgáljuk, hogy az entitás hitbox-a ütközik-e valamelyik akadállyal. Ha igen akkor az entitás irány szerinti hitbox-át az akadály ellenkező irányű hitbox-ához igazítjuk, így megakadályozva az áthaladást. (Lásd. 4.2 programkód)
 \begin{python}[caption={Ütközés kezelés},label=py:Ütközés kezelés]
     def collision(self, direction):
     if direction == 'horizontal':
@@ -180,6 +180,8 @@ A 4.2.-es programkód bemutatja a megvalósítását az ütközéskezelésnek. E
                         # moving up
                         self.hitbox.top = sprite.hitbox.bottom
                     \end{python}
+
+A mozgást a move függvény segítségével hajtja végre, amelynek a lényege, hogy az entitás rendelkezik egy irány változóval ami tárolja, hogy merre néz ez lehet (fel, le, jobbra, balra) és ezeknek az irányoknak a normalizálásával és a paraméterként megkapott sebesség értékkel meghatározza a következő pozícióját az entitásnak. Ez a pozíció módosítás a hitbox-ára vonatkozik azaz arra a dobozra amely az entitást körülveszi. Azért a hitbox-ot kell mozgatni, hiszen a szörnyek és karakterek képei a hitboxra vannak igazítva és nem a kép a hitboxhoz. Ez azért fontos mert így megelőzhető az olyan hibák előfordulása, amit a hitbox és a kép közötti eltérés okozhatna.
 
                     
                     \subsection{Player}
@@ -250,6 +252,106 @@ Tehát elmondható, hogy ez a változtatás jelentősen felgyorsította a pálya
 
 \subsection{Enemy}
 
+Az ellenségek a játékban a küldetések után talán a legfontosabb mechanikái a játknak, hiszen a velük való harc kiemelt szerepet kap a történet során.
+Az ellenségek is egy közös szülő osztályból származnak le, ez azért volt fontos, hogy a különböző ellenségeknek különböző tulajdonságokat tudjak adni. Például a sebesség, életerő, támadási sebesség, támadások hangjai. Ezeket a tulajdonságokat settings statikus osztály monster\_data dictionary-ben tárolom és olvasom be.
+
+A szörnyek mozgását úgy valósítottam meg, hogy ha a játékos egy adott sugaron belül ér a szörnyhöz képest ez az úgynevezett érzékelési sugár akkor kiszámolom vektorokkal a játékos távolságát és ha a távolság nagyobb mint 0 azaz nem egy helyen állnak, akkor meghatározom az irányt a két vektor különbségének normalizálásával. A távolság érték azért fontos, hogy megállíptsa mikor ér a játékos karaktere a szörnyhöz támadási távolságon belülre. Az irány érték pedig a szörny mozgatásához szükséges.
+
+Három különböző státusszal rendelkezhet egy ellenség. Támadási státuszt kap ha támadási sugaron belül tartózkodik a játékos karaktere, és ha egy bizonyos idő eltelt az előző támadás óta. Mozgás státuszt kap ha a játékos karaktere a szörny érzékelési sugarán belül van, de nem támadási sugaron belül. Ha a játékos karaktere nincs az érzékelési sugarán belül akkor pedig nyugalmi státuszt kap. Ezek a státuszok határozzák meg a szörnyek viselkedését és a megjelenített grafikát is a játék során.
+
+
+\subsection{NPC}
+
+Nem játékos által vezértelt karakterek azaz NPC-k egy kalandjáték során elengedhetetlen részei a történetnek és a játékmenetnek. Ahogy az összes többi szörny, játkos osztály is az Entity osztályból származik le, hiszen adott esetben szükség lehet mozgatásra és ütközés érzékelésre. Azonban a legtöbb esetben a játékos karaktere nem tudja megölni ezeket az entitásokat, hiszen a történet során szükség van rájuk. Ezért a játékos karaktere nem tud ütközni velük, és a szörnyekkel ellentétben nem tudnak támadni.
+
+\subsection{Questgiver}
+
+A játékom egyik legfontosabb mechanikája a küldetés rendszer, hiszen ezen alapszik az előrehaladás illetve a challange játékmódnál az újraindítás is a küldetések teljesítését érzékelve valósul meg. 
+
+A Questgiver NPC típúst a World osztály példányosítja és a példányok osztályváltozóinak inicializálásakor olvassa be a saját id-jéhez tartozó küldetéseket a Settings osztály npc\_data dictionary-jéből. Majd ezt követően a World osztály létrehozz a Player osztályból is egy példányt amely egészen a LevelHandler osztálytól kap paraméterként egy questgivers\_quest\_setup függvényt, amely egy trigger után vizsgálja hogy a játékos álltal már teljesített küldetés szerepel\-e még Questgivernél és, ha igen akkor kitörli azt. Ezáltal elkerülhető a küldetés ismétlődése. Küldetést nem lehet kihagyni mindegyiket sorban kell teljesíteni, ahogy a történet halad előre.
+
+Az questgiver típúsú NPC-k képesek egy előre megírt dialógus megjelenítésére (Lásd. 4.5 ábra), amelyben a játékos választhat két lehetőség közül amelyek a küldetés elfogadása vagy elutasítása. A választás megerősítése történhet a kurzornak a gomb felé mozgatásával ezután egy kattintással, vagy a billentyűzet segítségével egyaránt. A dialógus ablak megnyitásához szükséges a játékos karakteréhez viszonyított távolság érzékelése, hiszen egy beszélgetés során közel kell állni a kommunikációban résztvevő többi szereplőhöz ezt hasonló módon vizsgálom, mint ahogy a szörnyek esetében az érzékelési távolságot vizsgáltam. Illetve dialógus megjelenítéséhez még szükséges, hogy az adott NPC rendelkezzen a soron következő küldetés azonosítójával is.   
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14.0truecm]{images/dialogue.png}
+    \caption{Dialógus}
+    \label{fig:Dialógus}
+\end{figure}
+
+\subsection{Merchant}
+
+Egy kalandjátékban az előrehaladás mellett fontos, hogy a nehezen megszerzett tárgyakkal, esetünkben az arannyal lehessen mit kezdeni, ezért egy Merchant NPC típús létrehozását láttam a legjobb ötletnek, hiszen rengeteg különböző módon fellehet őket használni. 
+
+Egyenlőre csak bájital árusításra szolgáló merchant van a játékban (élet visszatöltő, energiát növelő, sebzést növelő bájitalok árusítására szolgál). A továbbfejleszétsi lehetőségek bekezdésben jobban kifejtem mikre lehet még használni a merchant típúsú NPC-t.  Ahogyan a Questgivernél is itt is a távolságvizsgálat alapján és egy gomb lenyomására történik a vásárlásra szolgáló ablak megjelenítése (Lásd. 4.6 ábra). A vásárlás során a játékos karakterének az egyenlege/arany mennyisége csökken, és a vásárolt tárgyak a hátizsákjába kerülnek.
+
+Azt, hogy milyen tárgyakat adhat el egy bizonyos merchant azt a Settings osztályból egy dictionaryben tárolt id-k beolvasása befolyásolja. Illetve a Settings osztály tartalmaz egy Items dictionary-t is amelyben a tárgyakra vonatkozó adatokat tárolom. Ilyen adatok például a tárgy neve, típúsa, ára hatása és annak mennyisége (Például mennyi plusz erő-t ad a tárgy), illetve a időtartamra vonatkozó megkötést és talán a legfontosabbat a grafikának az elérési útvonalát.  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9.0truecm]{images/merchant.png}
+    \caption{Merchant}
+    \label{fig:Merchant}
+\end{figure}
+
+
+\section{inventory}
+
+Inventory azaz táska rendszer, fontos szerepet kap a játék folyamán hiszen a merchanttól megvásárolt tárgyak ebbe a hátizsákba kerülnek bele és a játékos ezeket felhasználni amikor szükségét érzi.
+
+Öt szabad férőhellyel rendelkezik a táska ezért jól meg kell válogatni mik azok a fontos tárgyak amelyeket oda szeretne helyezni a játékos. Első nekifutásra egy futószalag szerű működést képzeltem el a táska rendszernek, amelyet azért gondoltam jó ötletnek, mert a megvalósítása egyszerű volt, hiszen megszerzett tárgyak időrendben kerültek bele a táskába. Viszont felvetette a problémát, hogy ha más sorrendben esik kézre a felhasználónak, vagy nincs helye akkor mit tud tenni. Ezért úgy döntöttünk, hogy jobb megoldás lenne, ha az azonos tárgyakkat össze lehetne húzni egy férőhelyre, ezáltal kényelmesebbé válna a használata a táskának. Megtartottam a futószalag szerű megoldást, viszont kiegészült a tárgy összevonással amelyet egy számláló bevezetésével oldottam meg, amely jelzi a felhasználónak, hogy még mennyi található nála abból az adott tárgyból. (Lásd. 4.7 ábra)
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15.5truecm]{images/inventory.png}
+    \caption{Táksa rendszer}
+    \label{fig:Táska rendszer}
+\end{figure}
+
+\section{Loot}
+
+A zsákmányolás funkciót azért tartottam fontosnak, hiszen plusz motivációt nyújt a játékosnak legyőzni a szörnyeket, ha szerezhet is tőlük tárgyakat. Egyenlőre a szörnyek három különböző tárgy dobására képesek. Tapasztalati pont bogyókat hagynak hátra, amelyek előre meghatározott mennyiségű tapasztalati pontot tartalmaznak, és mindegyik szörny ilyet hagy maga után a legyőzése után. Ezenkívül aranyat is dobhatnak, két különböző fajtát, bár erre már nem minden szörny képes, és ez ritkábban fordul elő. Az egyik fajta kis mennyiségű aranyat tartalmaz, míg a másik nagyobb mennyiségű aranyat ad. 
+
+A drop\_loot függvényt a szörnyek példányosításkor paraméterként megkapják és, ha elfogy az életpontjuk akkor hívják meg azt. Ez a metódus meghatároz a szörny legutóbbi pozíciójához viszonyítva egy 100x100-as négyzeten belüli pozíciót ahova a zsákmányolható tárgyak kerülni fognak. Ezt követően a szörny típúsához viszonyítva kiolvassa a Settings osztály monster\_data dictionary-jéből, hogy az adott szörny milyen tárgyakat dobhat, majd ez alapján az előre meghatározott esély alapján véletlenszám generálásával eldönti, hogy milyen tárgyakat hoz létre. A létrehozás úgy történik, hogy az adott pálya példánynak a loots osztályváltozójához hozzá fűz egy Loot osztály példányát amely tárgy nevét, mértékét, és helyét.
+
+A kirajzolása a felvehető tárgyaknak a visible sprite group frissítésével történik, hiszen a Loots osztály ahogy a többi objektum is, a pygame.sprite.Sprite osztályból származik le.  
+
+Tárgyak felvétele a tárgy pozíciója és a játékos karakternéket távolságát vizsgálva történik, ha elég közel megy a játékos a tárgyhoz akkor kitörli a kitörli a loots listából a felvett tárgyat és az értékeit hozzáadja a játékos karakterének a tulajdonságaiban tárolt értékekhez.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15.5truecm]{images/loots.png}
+    \caption{Zsákmányolás funkció}
+    \label{fig:Zsákmányolás funkció}
+\end{figure}
+
+\section{megvalisitando}
+
+weapon
+tile
+particles
+tile
+projectile
+ingame\_menu
+save
+Exportálás?
+game\_api\_client
+DOCKER
+BACKEND
+
+
+
+
+npc
+merchant
+questgiver
+user
+inventory
+loot
+
+Legnyagobb kihívások amikkel szembesültem
+
+továbbfejleszéts - fegyver szerzés opció / vásárlás, inventory növelés stb
 
 \chapter{tutorial}
 
