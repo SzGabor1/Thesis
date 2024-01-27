@@ -149,7 +149,7 @@ Továbbá a felhasználói felület kezelése és használata is itt történik.
 \subsection{LevelHandler}
 Ez a másik nagyon lényeges osztály, ez a GameHandler-ben kerül példányosításra. Feladata az világok, entitások létrehozása és kezelése. Emellett a kamera kezelés is ide tartozik. 
 Ezeket a különböző felületeket Sprite Group-okba szervezve kezeli, így könnyen tudja őket elérni és frissíteni.
-Legfontosabb ezek a spritegroupok közül talán a Visible Sprite Group, amely a játékos által látható felületeket tartalmazza. A kamera is ezeket rendereli ki, úgy hogy ezeket a csempéket y tengely szerint rendezi és úgy jeleníti meg, ezáltal egy hamis 3D hatást keltve.
+Legfontosabb ezek a sprite csoportok közül talán a Visible Sprite csoport, amely a játékos által látható felületeket tartalmazza. A kamera is ezeket rendereli ki, úgy hogy ezeket a csempéket y tengely szerint rendezi és úgy jeleníti meg, ezáltal egy hamis 3D hatást keltve.
 Megtalálható még obstacle, attack, és attackable felület csoportok is amelyek a játékmenet során fontos szerepet játszanak, különböző mechanikák végrehajtásánál.
 
 
@@ -314,7 +314,7 @@ A zsákmányolás funkciót azért tartottam fontosnak, hiszen plusz motiváció
 
 A drop\_loot függvényt a szörnyek példányosításkor paraméterként megkapják és, ha elfogy az életpontjuk akkor hívják meg azt. Ez a metódus meghatároz a szörny legutóbbi pozíciójához viszonyítva egy 100x100-as négyzeten belüli pozíciót ahova a zsákmányolható tárgyak kerülni fognak. Ezt követően a szörny típúsához viszonyítva kiolvassa a Settings osztály monster\_data dictionary-jéből, hogy az adott szörny milyen tárgyakat dobhat, majd ez alapján az előre meghatározott esély alapján véletlenszám generálásával eldönti, hogy milyen tárgyakat hoz létre. A létrehozás úgy történik, hogy az adott pálya példánynak a loots osztályváltozójához hozzá fűz egy Loot osztály példányát amely tárgy nevét, mértékét, és helyét.
 
-A kirajzolása a felvehető tárgyaknak a visible sprite group frissítésével történik, hiszen a Loots osztály ahogy a többi objektum is, a pygame.sprite.Sprite osztályból származik le.  
+A kirajzolása a felvehető tárgyaknak a visible sprite csoport frissítésével történik, hiszen a Loots osztály ahogy a többi objektum is, a pygame.sprite.Sprite osztályból származik le.  
 
 Tárgyak felvétele a tárgy pozíciója és a játékos karakternéket távolságát vizsgálva történik, ha elég közel megy a játékos a tárgyhoz akkor kitörli a kitörli a loots listából a felvett tárgyat és az értékeit hozzáadja a játékos karakterének a tulajdonságaiban tárolt értékekhez.
 
@@ -325,23 +325,53 @@ Tárgyak felvétele a tárgy pozíciója és a játékos karakternéket távols�
     \label{fig:Zsákmányolás funkció}
 \end{figure}
 
+
+\section{Weapon}
+
+A különböző fegyverek használata szintén egy elengedhetetlen része lett a játéknak. A fegyvereket a játékos karaktere használja a szörnyek elleni harc során. 
+
+Ezen harcolásra szolgáló eszközök kirajzolása a támadás gomb lenyomása után történik a Weapon osztály példányosításával. Ez az osztály a játékos karaktere által kezében tartott fegyver rajzolja ki a képernyőre. Mivel fontosnak tartottam, hogy mozgás közben is lehessen támadni, illetve legyen egy csapás/suhintás animáció ezért egy frissités funkciót vezettem be, amely mindig a játékos karakterének legutóbbi helyzetét, és irányát vizsgálja majd ezekre az adatokra alapozva frissíti a már létrehozott felületet. A csapás animációt mind a négy irányban külön-külön kellett megtervezni, hiszen a fegyverek nem egyformán néznek ki minden irányból. Sinus függvény segítségével valósítottam meg a megjelenített fegyver forgatását egy amplitúdó értékkel amely a fegyver típusától függően változhat.
+
+Ahogyan a többi látható objektum ezek a fegyverek is a visible sprite csoport része, viszont rendelekzik az attack\_sprites csoporttal is amely segít megkülönböztetni a többi felülettől a fegyvereket, ezáltal támogatva a támadási logika megvalósítását. A támadási logika egy metódus, amely ezeken az attack\_sprites csoporton végig iterál, és vizsgálja az attackable\_sprites felületekkel való ütközést amelyeket olyan entitások kaphatnak, amelyekkel a játékos meg tud küzdeni a játék során, legyen az egy szörny vagy akár egy kiüthető fűcsomó.  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15.5truecm]{images/weapons.png}
+    \caption{A játékban megtalálható fegyverek}
+    \label{fig:A játékban megtalálható fegyverek}
+\end{figure}
+
+
+\section{ingame\_menu}
+
+Játékmenet közbeni menü amely lehetővé teszi a játékállapot mentését kezelő metódus elindítását a Save gomb megnyomásával és egyben egy pillanatálj funkció elérését is. 
+
+A pillanatálj funkciót úgy valósítottam meg, hogy az összes játékbeli sprite group azaz felületi csoport kirajzolására szolgáló függvényt állítom le egy boolean típúsú változóval ezáltal minden játékon belüli elem megáll a legutolsó ismert állapotában, majd a menü bezárása után, amelyet a resume gomb megnyomásával tehet meg a játékos, onnan folytatódnak az események ahol abbamaradtak.
+
+\section{Save}
+
+Ahogy a korábbi fejezetekben már említettem a játékállapot mentését a Save gomb megnyomásával lehet elérni. A mentés a játékállapot minden fontosabb elemét eltárolja egy JSON típúsú fájlban, ha offline módban játszik a játékos, vagy FastAPI-n keresztül kommunikálva egy mysql adatbázisban, ha online módot választott a felhasználó.
+
+
+
+
+
 \section{megvalisitando}
 
-weapon
 tile
 particles
 tile
 projectile
-ingame\_menu
 save
 Exportálás?
 game\_api\_client
 DOCKER
-BACKEND
+FastAPI
 
 
 
 
+weapon 
 npc
 merchant
 questgiver
