@@ -1,3 +1,21 @@
+
+\section{még leírható pár mondatban? :}
+
+tile
+particles
+projectile
+Exportálás?
+game\_api\_client
+DOCKER
+
+
+
+
+
+
+
+
+
 \section{Az Elérhető Eredmények és Oktatás}
 
 A Pygame és más eszközökkel készített játékok bemutatása nyit egy ablakot a játékfejlesztés izgalmas világába. Ebben a fejezetben megismerkedünk néhány sikeres projekttel és kreatív alkotással, amelyeket a Pygame és más hasonló eszközök segítségével hoztak létre. Emellett megvizsgáljuk, hogy milyen kutatási és tanulási célkitűzéseket lehet elérni ezen eszközökkel.

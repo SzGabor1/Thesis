@@ -119,7 +119,7 @@ A főmenüben három menüpont található meg, az új játék létrehozása, me
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=14.0truecm]{images/mainmenu.png}
+    \includegraphics[width=15.0truecm]{images/mainmenu.png}
     \caption{Főmenü}
     \label{fig:Főmenü}
 \end{figure}
@@ -132,7 +132,7 @@ A nehézségi szint annyiban különbözik, hogy a "normal" módban, ha elfogy a
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=14.0truecm]{images/newgame.png}
+    \includegraphics[width=15.0truecm]{images/newgame.png}
     \caption{Új játék létrehozása}
     \label{fig:Új játék létrehozása}
 \end{figure}
@@ -353,80 +353,9 @@ A pillanatálj funkciót úgy valósítottam meg, hogy az összes játékbeli sp
 Ahogy a korábbi fejezetekben már említettem a játékállapot mentését a Save gomb megnyomásával lehet elérni. A mentés a játékállapot minden fontosabb elemét eltárolja egy JSON típúsú fájlban, ha offline módban játszik a játékos, vagy FastAPI-n keresztül kommunikálva egy mysql adatbázisban, ha online módot választott a felhasználó.
 
 
+\section{Adatbázis használata a programban}
 
+Az online mentés kezeléséhez, illetve a játékban való regisztrációhoz és bejelentkezéshez szükség volt egy backend megvalósítására azaz egy alkalmazásra amely kommunikációt végez az adatbázissal. Ezt a FastAPI nevű python könyvtár segítségével valósítottam meg. A FastAPI egy modern, gyors, könnyű keretrendszer a microservice-ekhez talán a legjobb választás python programozási nyelv esetében.
 
+Az adatokat különböző requestek és a megfelelő URL segítségével tudjuk elérni, vagy adott esetben felvinni, frissíteni. A FastAPI érzékeli, hogy egy kéérés érkezett a rendszerbe, és ha az adott kérés teljesíthető akkor az esetemben megkezdi a kommunikációt a mysql adatbázissal és a visszakapott adatokat BaseModell típusú objektumokba tölti, amelyeket a Pydantic könyvtár segítségével tudok kezelni. Ez a modell azért fontos mert validálja, hogy a kérésben szereplő adatok megfelelnek-e a megadott adatstruktúrának. Miután a validálás is sikeresen lezajlott a FastAPI visszaküldi a végpont kérésre a megfelelő választ.
 
-\section{megvalisitando}
-
-tile
-particles
-tile
-projectile
-save
-Exportálás?
-game\_api\_client
-DOCKER
-FastAPI
-
-
-
-
-weapon 
-npc
-merchant
-questgiver
-user
-inventory
-loot
-
-Legnyagobb kihívások amikkel szembesültem
-
-továbbfejleszéts - fegyver szerzés opció / vásárlás, inventory növelés stb
-
-\chapter{tutorial}
-
-
-
-Ez a fejezet mutatja be a megvalósítás lépéseit.
-Itt lehet az esetlegesen előforduló technikai nehézségeket említeni.
-Be lehet már mutatni a program elkészült részeit.
-
-Meg lehet mutatni az elkészített programkód érdekesebb részeit.
-(Az érdekesebb részek bemutatására kellene szorítkozni.
-Többségében a szöveges leírásnak kellene benne lennie.
-Abból lehet kiindulni, hogy a forráskód a dolgozathoz elérhető, azt nem kell magába a dolgozatba bemásolni, elegendő csak behivatkozni.)
-
-A dolgozatban szereplő forráskódrészletekhez külön vannak programnyelvenként stílusok.
-Python esetében például \mref{py:test}ban látható egy formázott kódrészlet.
-\begin{python}[caption={Python példa},label=py:test]
-    import sys
-    
-    if __name__ == '__main__':
-    pass
-\end{python}
-
-A stílusfájlok a \texttt{styles} jegyzékben találhatók.
-A stílusok között szerepel még C++, Java és Rust stílusfájl.
-Ezek használatához a \texttt{dolgozat.tex} fájl elején \texttt{usepackage} paranccsal hozzá kell adni a stílust, majd a stílusfájl nevével megegyező környezetet lehet használni.
-További példaként C++ forráskód esetében ez így szerepel.
-\begin{cpp}
-    #include <iostream>
-    
-class Sample : public Object
-{
-    // An empty class definition
-    }
-\end{cpp}
-Stílusfájlokból elegendő csak annyit meghagyni, amennyire a dolgozatban szükség van.
-Más, C szintaktikájú nyelvekhez (mint például a JavaScript és C\#) a Java vagy C++ stílusfájlok átszerkesztésére van szükség.
-(Elegendő lehet csak a fájlnevet átírni, és a fájlban a környezet nevét.)
-
-Nyers adatok, parancssori kimenetek megjelenítéséhez a \texttt{verbatim} környezetet lehet használni.
-\begin{verbatim}
-    $ some commands with arguments
-    1 2 3 4 5
-    $ _
-\end{verbatim}
-
-A kutatás jellegű témáknál ez a fejezet gyakorlatilag kimaradhat.
-Helyette inkább a fő vizsgálati módszerek, kutatási irányok kaphatnak külön-külön fejezeteket.
