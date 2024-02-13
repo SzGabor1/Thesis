@@ -2,14 +2,11 @@
 
 \section{Grafikák elkészítése}
 
-\subsection{Grafika megtervezése}
-
-\subsubsection{Inspiráció}
-Azok előtt, hogy nekiláttam a grafikai elemek létrehozásának, inspirációként szolgáltak az interneten elérhető rajzolási stílusok és csempekészletek. Az alapja és mintája a saját rajzaimnak a Ninja Adventure Tileset volt, amelyet Pixel-boy készített.\cite{NAT}
+Mielőtt, hogy nekiláttam a grafikai elemek létrehozásának, inspirációként szolgáltak az interneten elérhető rajzolási stílusok és csempekészletek. Az alapja és mintája a saját rajzaimnak a Ninja Adventure Tileset volt, amelyet Pixel-boy készített.\cite{NAT}
 
 \subsection{Grafikus szerkesztő}
 
-Fontos kiemelni, hogy egy "pixelart" rajz stílusról beszélünk az esetemnben, ezért fontos volt olyan rajzprogramot választanom amely minden igényemet kielégíti és könnyen kezelhető tapasztalatlan grafikusok számára is. A kiválaszott program az Aseprite volt, ebbe készítettem minden játékban megtalálható grafikát. \cite{Aseprite}
+Fontos kiemelni, hogy egy "pixelart" rajz stílusról beszélünk az esetemnben, ezért kerestem olyan rajzprogramot választanom amely minden igényemet kielégíti és könnyen kezelhető tapasztalatlan grafikusok számára is. A kiválaszott program az Aseprite volt, ebbe készítettem minden játékban megtalálható grafikát. \cite{Aseprite}
 
 \begin{figure}[H]
     \centering
@@ -21,13 +18,13 @@ Fontos kiemelni, hogy egy "pixelart" rajz stílusról beszélünk az esetemnben,
 
 \subsection{Rajzok elkészítése}
 
-A rajzok elkészítése két fő részből állt, a pálya tervezéséből és a karakterek valamint a környezet kialakításából. A pálya tervezéséhez a korábban említett Ninja Adventure Tileset szolgált mintaként, melyből az összes pálya elemét saját kezűleg rajzoltam ki. A karakterek és környezet rajzainak elkészítésénél pedig meglévő rajzokat használtam inspirációként, és ezeket egészítettem ki saját kreatív ötleteimmel.
+A rajzok elkészítése két fő részből állt, a pálya tervezéséből és a karakterek valamint a környezet kialakításából. A pálya tervezéséhez a korábban említett Ninja Adventure Tileset szolgált mintaként, melyből az összes pálya elemét saját kezűleg rajzoltam meg. A karakterek és környezet rajzainak elkészítésénél pedig meglévő rajzokat használtam inspirációként, és ezeket egészítettem ki saját kreatív ötleteimmel.
 
 \subsubsection{Pálya}
 A pályaelemek létrehozásánál kiemelkedően fontos volt figyelnem arra, hogy a csempék harmonikusan illeszkedjenek egymáshoz, ezáltal kellemes és összefüggő látványt teremtve.
 
 \subsubsection{Entitások}
-Karakterek, és szörnyek megtervezése annyiban tért el, hogy ott figyelni kellett az animációra is, hiszen élethű mozgást szerettem volna elérni. Egy ilyen mozgás animáció 4-6 képből áll, amelyeket egymás után lejátszva érhető el a kívánt hatás. Illetve mivel 4 különböző irányba tudnak haladni ezek az entitások ezért 4 különböző animációt kellett elkészítenem, amelyeket a játék során a karakter irányának megfelelően tudtam lejátszani.
+Karakterek, és szörnyek megtervezése annyiban tért el, hogy ott figyelni kellett az animációra is, hiszen élethű mozgást szerettem volna utánozni. Egy ilyen mozgás animáció 4-6 képből áll, amelyeket egymás után lejátszva érhető el a kívánt hatás. Illetve mivel 4 különböző irányba tudnak haladni ezek az entitások ezért 4 különböző animációt kellett elkészítenem, amelyeket a játék során a karakter irányának megfelelően tudtam lejátszani.
 
 
 
@@ -37,7 +34,7 @@ Karakterek, és szörnyek megtervezése annyiban tért el, hogy ott figyelni kel
 \label{subsec:Tiled}
 A pálya megtervezéséhez a Tiled-et \cite{Tiled} választottam ami egy népszerű térképszerkesztő szoftver, amelyet játékfejlesztők használnak a 2D-s játékok pályáinak tervezésére és szerkesztésére. A Tiled egy nyílt forráskódú program, így ingyenesen elérhető és széles körben használt az indie játékfejlesztők körében.
 
-Ez a szoftver lehetővé teszi a felhasználók számára, hogy könnyen létrehozzanak és testreszabjanak térképeket, amelyeket különböző játékkeretrendszerekbe integrálhatnak. A Tiled számos funkciót kínál, mint például csempekészletek használata, rétegek kezelése, objektumok és kollíziók definiálása, valamint az exportálás különböző formátumokban, például JSON vagy TMX (Tiled Map XML).
+Ez a szoftver lehetővé teszi a felhasználók számára, hogy könnyen létrehozzanak és testreszabjanak térképeket, amelyeket különböző játékkeretrendszerekbe integrálhatnak. A Tiled számos funkciót kínál, mint például csempekészletek használata, rétegek kezelése, objektumok és kollíziók definiálása, valamint az exportálás különböző formátumokban, például CSV vagy TMX (Tiled Map XML).
 
 Az egyszerű és intuitív felhasználói felülete miatt a Tiled ideális eszköz a játékfejlesztők számára, akik részletes és részletekre is figyelő térképeket szeretnének készíteni játékaikhoz. Az XML alapú TMX formátum kompatibilis a legtöbb játékmotorral, így a Tiled segítségével készült térképek könnyen beilleszthetők a fejlesztési folyamatba.
 
@@ -67,11 +64,11 @@ A következő szekcióban a definiált osztályok kerülnek bemutatásra.
 \subsection{Settings}
 Ennek az osztálynak a fő célja a beállítások kezelése egy játékban vagy alkalmazásban. Az osztály tartalmazza az alapértelmezett beállításokat, mint például a játékablak méretét, a hangerejét és egyebeket. Az osztály segítségével ezeket a beállításokat be lehet tölteni és menteni egy JSON fájlba.
 
-Az osztályban található statikus osztályváltozók az alapértelmezett beállításokat tárolják, és a program különböző részeiben felhasználhatók. A statikus osztályváltozók előnye, hogy nem szükséges létrehozni egy példányt az osztályból, így könnyen hozzáférhetők.
+Az osztályban található statikus osztályváltozók az alapértelmezett beállításokat tárolják, és a program különböző részeiben felhasználhatók. Az osztályban található statikus osztályváltozók az alapértelmezett értékeket tárolják, és a program különböző részeiben felhasználhatók, anélkül hogy az osztály példányt kellene létrehozni belőle, így könnyen hozzáférhetőek.
 
 Az osztály további adatokat is tartalmaz, például hangokat, grafikákat, karaktereket, ellenségeket, lövedékeket és fegyvereket. Mindezek az adatok részletezik a játékbeli objektumok tulajdonságait.
 
-Az osztály emellett definiálja a felhasználói felület (UI) színeit és stílusait, amelyek a játék megjelenítéséhez használatosak. Ezek a színek és stílusok segítenek a felhasználói felület személyre szabásában.
+Az osztály emellett definiálja a felhasználói felület színeit és stílusait, amelyek a játék megjelenítéséhez használatosak. Ezek a színek és stílusok segítenek a felhasználói felület személyre szabásában.
 
 
 \subsection{Game osztály}
@@ -81,7 +78,7 @@ A 4.1. programkód részletesen bemutatja, hogyan kell megvalósítani ezt a fő
 
 Amennyiben a menürendszer visszaadja a menuenums.GAME értéket, az azt jelenti, hogy a játékot választottuk a menüből, és belépünk a játék főciklusába. Itt történik minden, a játékmenet során szükséges frissítés, eseménykezelés és kirajzolás. Itt szabjuk meg a képfrissítés mértékét is a 'self.clock.tick(Settings.FPS)' sorral, amely a másodpercenként kirajzolandó képkockák számát határozza meg.
 
-Ez az osztály tehát létfontosságú szerepet játszik abban, hogy a játék működése zökkenőmentes és élvezetes legyen, és a kódban látható példa segítségével könnyen megérthető, hogyan történik mindez.
+Ez az osztály tehát létfontosságú szerepet játszik abban, hogy a játék működése zökkenőmentes legyen, és a kódban látható példa segítségével könnyen megérthető, hogyan történik mindez.
 
 
 \begin{python}[caption={Játék főciklusa},label=py:főciklus]
@@ -106,9 +103,7 @@ Ez az osztály tehát létfontosságú szerepet játszik abban, hogy a játék m
 
 
 \subsection{UserAuth}
-Szükségem volt, hogy adatokat adatbázisba mentsek és játékmenet közben frissítsem, elérjem azokat, ezért szükséges volt implementálni egy felhasználói fiók kezelő osztályt, amely FastAPI segítségével kommunikál a MYSQL adatbázissal. 
-4 fő metódussal rendelkezik, ezek a következők: felhasználónév, jelszó validálás, a bejelentkezés és regisztráció kezelése.
-
+Ez az osztály kezeli a regisztrációhoz és a bejelentkezéshez kapcsolódó folyamatokat. Ilyen folyamat többek között a felhasználói felület megjelenítése, de a tartalom ellenőrzés és hibakezelés is.
 
 \subsection{MainMenu}
 
@@ -128,7 +123,7 @@ A főmenüben három menüpont található meg, az új játék létrehozása, me
 
 \subsection{NewGameMenu}
 Az új játék menüpont kiválasztása után a játékosnak meg kell adni a karakterének a nevét, illetve választhat különböző karakter kinézet közül. Ha be van jelentkezve a játékos, akkor van lehetősége nehézségi szintet is választani.
-A nehézségi szint annyiban különbözik, hogy a "normal" módban, ha elfogy a játékos életereje, akkor a játék folytatódik tovább, újraéled egy bizonyos helyen. Viszont, ha a "challange"  módot választja akkor három funkcióval bővül a játékmenet. Az első ilyen funkció, hogy ha elfogy a játékos életereje akkor véglegesen meghal, és nem lesz lehetősége tovább folytatni azzal a bizonyos karakterrel a játékot. A második plusz funkció, hogy az összes küldetés teljesítése esetén a játék újrakezdődik amely azt eredményezi, hogy a szörnyek erősödnek, és nagyobb kihívás lesz újra végigvinni az összes küldetést. Illetve tartalmaz egy ranglista menüpontot, amely jelzi a legügyesebb játékosok hányszor tudták a "challange" mód használatával végigvinni az összes küldetést. 
+A nehézségi szint annyiban különbözik, hogy a "normal" módban, ha elfogynak a játékos életpontjai, akkor a játék folytatódik tovább, újraéled egy bizonyos helyen. Viszont, ha a "challange"  módot választja akkor három funkcióval bővül a játékmenet. Az első ilyen funkció, hogy ha elfogy a játékos életereje akkor véglegesen meghal a karakter, és nem lesz lehetősége tovább folytatni azzal a bizonyos karakterrel a játékot. A második plusz funkció, hogy az összes küldetés teljesítése esetén a játék újrakezdődik amely azt eredményezi, hogy a szörnyek erősödnek, és nagyobb kihívás lesz újra végigvinni az összes küldetést. Illetve tartalmaz egy ranglista menüpontot, amely jelzi a legügyesebb játékosok hányszor tudták a "challange" mód használatával végigvinni az összes küldetést. 
 
 \begin{figure}[H]
     \centering
@@ -185,7 +180,7 @@ A mozgást a move függvény segítségével hajtja végre, amelynek a lényege,
 
                     
                     \subsection{Player}
-Ez az osztály a játékos karakterét valósítja meg, amely a játék során irányítható. A játékos karaktere egy entitás, így örökli az entitás osztály összes tulajdonságát és metódusát. Az osztály inicializálása során számos fontos adatot tárol, például a játékos nevét, karakterének azonosítóját és kezdeti pozícióját. Ezek az adatok meghatározzák a karakter kezdeti állapotát a játékban. A karakter mozgását és irányítását az osztály input metódusa kezeli. Ennek segítségével az osztály figyeli, hogy milyen billentyűk vannak lenyomva, és ennek megfelelően mozgatja a karaktert a játékban. A játékos karakter képes balra, jobbra, felfelé és lefelé mozogni a megfelelő billentyűk lenyomásával. A karakter sebessége és energiaszintje dinamikusan változik a játék során. Például a karakter gyorsabban mozoghat, ha lenyomja a "SHIFT" billentyűt, és az energia szintje csökken, miközben sprintel. Az energia idővel regenerálódik, ami lehetővé teszi a karakter számára, hogy továbbra is használja a sprintet. A játékos karakter képes támadni is, és az attack metódus meghívásával hozza létre a támadást. A támadásokat az osztály figyeli, és számítja a támadások közötti hűlési időt. A karakter fegyvere is dinamikusan változik, és a játékos lehetőséget kap a fegyver cseréjére a játék során. A karakternek van egy egészségi és energia szintje, amelyek határozzák meg túlélését a játékban. Amennyiben az egészsége nullára csökken, a karakter meghal, de van lehetőség a visszatérésre vagy újrakezdésre a játékban, attól függően, hogy a játék nehézségi szintjétől függően. A karakter számos egyéb tulajdonsággal és képességgel rendelkezik, például tapasztalati pontokkal, pénzügyi egyenleggel és teljesített küldetésekkel. Ezek a tényezők befolyásolják a játékmenetet és a karakter fejlődését. Az osztály továbbá lehetővé teszi a karakternek, hogy tárgyakat használjon és rendelkezzen egy inventáriummal. A játékos képes tárgyakat váltani és használni a játék során, ami további taktikai elemet ad a játékhoz. Összességében ez az osztály kulcsfontosságú a játékos karakter kezelésében és irányításában, lehetővé téve a játékosnak, hogy részt vegyen a játék világában és kihívásokkal nézzen szembe a karaktere fejlesztése során.
+Ez az osztály a játékos karakterét valósítja meg, amely a játék során irányítható. A játékos karaktere egy entitás, így örökli az entitás osztály összes tulajdonságát és metódusát. Az osztály inicializálása során számos fontos adatot tárol, például a játékos nevét, karakterének azonosítóját és kezdeti pozícióját. Ezek az adatok meghatározzák a karakter kezdeti állapotát a játékban. A karakter mozgását és irányítását az osztály input metódusa kezeli. Ennek segítségével az osztály figyeli, hogy milyen billentyűk vannak lenyomva, és ennek megfelelően mozgatja a karaktert a játékban. A játékos karakter képes balra, jobbra, felfelé és lefelé mozogni a megfelelő billentyűk lenyomásával. A karakter sebessége és energiaszintje dinamikusan változik a játék során. Például a karakter gyorsabban mozoghat, ha lenyomja a "SHIFT" billentyűt, és az energia szintje csökken mindeközben. Az energia idővel regenerálódik, ami lehetővé teszi, hogy tovább használhassa a gyors futás funkciót. A játékos karakter képes támadni is, és az attack metódus meghívásával hozza létre a támadást. A támadásokat az osztály figyeli, és számítja ki a támadások közöt eltelt időt, hogy ne lehessen túl gyorsan ütni a fegyverekkel. A karakter fegyvere is dinamikusan változik, és a játékos lehetőséget kap a fegyver cseréjére a játék során. A karakternek vannak életpontjai és energia szintje, amelyek határozzák meg túlélését a játékban. Amennyiben az életpontja nullára csökken, a karakter meghal, de van lehetőség a visszatérésre vagy újrakezdésre a játékban, attól függően, hogy milyes a játék nehézségi szintje. A karakter számos egyéb tulajdonsággal és képességgel rendelkezik, például tapasztalati pontokkal, megszerzett arany mennyiségével és teljesített küldetésekkel. Ezek a tényezők befolyásolják a játékmenetet és a karakter fejlődését. Az osztály továbbá lehetővé teszi a karakternek, hogy tárgyakat használjon és rendelkezzen egy táskával. A játékos képes tárgyakat váltani és használni a játék során, ami további taktikai elemet ad a játékhoz. Összességében ez az osztály kulcsfontosságú a játékos karakter kezelésében és irányításában, lehetővé téve a játékosnak, hogy részt vegyen a játék világában és kihívásokkal nézzen szembe a karaktere fejlesztése során.
 \subsection{World, Dungeon}
 
 Egy közös szülő osztályból származnak le, ez azért fontos, hogy a különböző világokat könnyen tudjam kezelni és különböző tulajdonságokat adni nekik. Ebben az osztályban a minden világra vonatkozó lehetőségeket kezelem, ilyen például az effekteket lejátszó AnimationPlayer osztályom származtatása, hiszen azt elég egyszer definiálni és felhívni ott ahol szükséges ahelyett, hogy minden világnak lenne egy külön példánya. Továbbá ilyen opció a térképmegnyitás, és az azzal kapcsolatos összes funkció, hol található a következő küldést adó nem játékos karakter. Hiszen a játék története jelenleg teljesen lineáris, tehát egy adott sorrendben történhet csak a küldetések teljesítése. Amit még fontos megemlíteni ezzel az osztállyal kapcsolatban, az a szörnyek által dobott tárgyak, ilyen tárgy jelenleg, a tapasztalati pont, és az aranypénz. Ezeket a tárgyakat a játékos fel tudja venni, és a játék során fel tudja használni.  
@@ -295,7 +290,7 @@ Azt, hogy milyen tárgyakat adhat el egy bizonyos merchant azt a Settings osztá
 \end{figure}
 
 
-\section{inventory}
+\subsection{inventory}
 
 Inventory azaz táska rendszer, fontos szerepet kap a játék folyamán hiszen a merchanttól megvásárolt tárgyak ebbe a hátizsákba kerülnek bele és a játékos ezeket felhasználni amikor szükségét érzi.
 
@@ -308,7 +303,7 @@ Inventory azaz táska rendszer, fontos szerepet kap a játék folyamán hiszen a
     \label{fig:Táska rendszer}
 \end{figure}
 
-\section{Loot}
+\subsection{Loot}
 
 A zsákmányolás funkciót azért tartottam fontosnak, hiszen plusz motivációt nyújt a játékosnak legyőzni a szörnyeket, ha szerezhet is tőlük tárgyakat. Egyenlőre a szörnyek három különböző tárgy dobására képesek. Tapasztalati pont bogyókat hagynak hátra, amelyek előre meghatározott mennyiségű tapasztalati pontot tartalmaznak, és mindegyik szörny ilyet hagy maga után a legyőzése után. Ezenkívül aranyat is dobhatnak, két különböző fajtát, bár erre már nem minden szörny képes, és ez ritkábban fordul elő. Az egyik fajta kis mennyiségű aranyat tartalmaz, míg a másik nagyobb mennyiségű aranyat ad. 
 
@@ -326,7 +321,7 @@ Tárgyak felvétele a tárgy pozíciója és a játékos karakternéket távols�
 \end{figure}
 
 
-\section{Weapon}
+\subsection{Weapon}
 
 A különböző fegyverek használata szintén egy elengedhetetlen része lett a játéknak. A fegyvereket a játékos karaktere használja a szörnyek elleni harc során. 
 
@@ -342,13 +337,13 @@ Ahogyan a többi látható objektum ezek a fegyverek is a visible sprite csoport
 \end{figure}
 
 
-\section{ingame\_menu}
+\subsection{ingame\_menu}
 
 Játékmenet közbeni menü amely lehetővé teszi a játékállapot mentését kezelő metódus elindítását a Save gomb megnyomásával és egyben egy pillanatálj funkció elérését is. 
 
 A pillanatálj funkciót úgy valósítottam meg, hogy az összes játékbeli sprite group azaz felületi csoport kirajzolására szolgáló függvényt állítom le egy boolean típúsú változóval ezáltal minden játékon belüli elem megáll a legutolsó ismert állapotában, majd a menü bezárása után, amelyet a resume gomb megnyomásával tehet meg a játékos, onnan folytatódnak az események ahol abbamaradtak.
 
-\section{Save}
+\subsection{Save}
 
 Ahogy a korábbi fejezetekben már említettem a játékállapot mentését a Save gomb megnyomásával lehet elérni. A mentés a játékállapot minden fontosabb elemét eltárolja egy JSON típúsú fájlban, ha offline módban játszik a játékos, vagy FastAPI-n keresztül kommunikálva egy mysql adatbázisban, ha online módot választott a felhasználó.
 

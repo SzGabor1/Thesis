@@ -20,7 +20,7 @@ Ezért fontos számomra, hogy saját magam készítsem el a rajzokat, ezzel is e
 
 \section{Menürendszer}
 
-A menürendszernek általában a játékhoz illőnek kell lennie, hogy a játékosok ne érezzék azt, hogy egy másik játékot indítanak el. fontos az is hogy átlátható legyen, hogy a játékosok könnyen eligazodjanak benne, és ne kelljen sok időt tölteniük azzal, hogy megtalálják a keresett funkciót.
+A menürendszernek általában a játékhoz illőnek kell lennie, hogy a játékosok ne érezzék azt, hogy egy másik játékot indítanak el. Fontos az is hogy átlátható legyen, hogy a játékosok könnyen eligazodjanak benne, és ne kelljen sok időt tölteniük azzal, hogy megtalálják a keresett funkciót.
 
 \begin{figure}[H]
     \centering
@@ -30,7 +30,7 @@ A menürendszernek általában a játékhoz illőnek kell lennie, hogy a játék
 \end{figure}
 
 \subsection{Felhasználói fiók}
-Felhasználói fiók létrehozása azért szükséges a játékomban, mivel szeretnék létrehozni egy ranglista rendszert, ahol a játékosok tudnak egymással versengeni, ki hányszor vitte végig a játékot egyre nehezebb fokozaton. Ehhez a rendszerhez elengedhetetlen, hogy a játékosokat megtudjam különböztetni, illetve, hogy egy adatbázisban eltudjam tárolni a játékosok adatait.
+Felhasználói fiók létrehozása azért szükséges a játékomban, mivel szeretnék létrehozni egy ranglista rendszert, ahol a játékosok tudnak egymással versengeni, hogy ki hányszor vitte végig a játékot anélkül, hogy a karaktere egyszer is meghalt volna, miközben a szörnyek minden újrakezdést követően erősödnek. Ehhez a rendszerhez elengedhetetlen, hogy a játékosokat megtudjam különböztetni, illetve, hogy egy adatbázisban eltudjam tárolni a játékosok adatait.
 
 \begin{figure}[H]
     \centering
@@ -43,12 +43,10 @@ Felhasználói fiók létrehozása azért szükséges a játékomban, mivel szer
 
 A bejelentkezést követően a játékosoknak három menüpont fog elérhetővé válni. Az egyik kiemelkedően fontos lehetőség a beállítások menüpont lesz, mivel általában itt találhatók a kulcsfontosságú funkciók módosítására szolgáló lehetőségek. Az én esetemben itt lesz elérhető a teljesképernyős mód beállítása. A beállítások menüpont alatt továbbá megtalálható lesz egy "Credits" opció is, ami tartalmazni fogja a készítő nevét és az elkészítés évét. A másik két menüpontnak pedig a játék indításával kell kapcsolatosnak lennie, mivel a játékosoknak lehetőségük lesz új karakter létrehozására, illetve meglévő mentésük betöltésére.
 
-\subsection{Mentés}
-
 
 \subsection{Játékon belüli menürendszer}
 
-A legtöbb játékban kiemelkedő jelentőségű a játékon belüli pillanatfelvétel szolgáltatás, valamint egy belső menürendszer. Lényeges, hogy ezek könnyen elérhetőek legyenek, miközben nem zavarják a játékélményt. A játékosoknak lehetőségük lesz a játék közben is hozzáférni egy beállítások menühöz, amelyben a hangerőszintet is be tudják majd állítani. Ezen menü részét kell képeznie egy mentés funkciónak, ami a játék aktuális állapotának mentését teszi lehetővé, továbbá egy folytatás lehetőségnek, és egy kilépés opciónak, amely a játék bezárását szolgálja.
+A legtöbb játékban kiemelkedő jelentőségű a játékon belüli pillanatálj funkció, valamint egy belső menürendszer. Lényeges, hogy ezek könnyen elérhetőek legyenek, miközben nem zavarják a játékélményt. A játékosoknak lehetőségük lesz a játék közben is hozzáférni egy beállítások menühöz, amelyben a hangerőszintet is be tudják majd állítani. Ezen menü részét kell képeznie egy mentés funkciónak, ami a játék aktuális állapotának mentését teszi lehetővé, továbbá egy folytatás lehetőségnek, és egy kilépés opciónak, amely a játék bezárását szolgálja.
 
 
 \section{Felhasználói felület és a játékos cselekvési lehetőségei}
@@ -60,7 +58,7 @@ A játékokban fontos a jól megtervezett felhasználói felület, amely lehető
 
 A felhasználói felület megtervezése során, igyekeztem figyelni, a letisztultságra és a felhasználói élményre. Fontosnak tartottam, hogy a design egyszerű és könnyen átlátható legyen, hogy a felhasználó könnyedén megtalálja azokat a funkciókat és információkat, amelyekre szüksége van.
 
-A HUD (Head Up Display) a játék során folyamatosan látható lesz, így a játékosoknak nem kell külön menübe navigálniuk, hogy megtalálják a szükséges információkat. A HUD a játékos karakterének életerőjét, energia szintjét, a játékos aranyát, a játékos szintjét, a játékos tapasztalati pontjait, a játékos fegyverét, a játékos által használt italokat fogja megjeleníteni.
+A HUD (Head Up Display) a játék során folyamatosan látható lesz, így a játékosoknak nem kell külön menübe navigálniuk, hogy megtalálják a szükséges információkat. A HUD a játékos karakterének életpontjait, energia szintjét, a játékos aranyát, a játékos szintjét, a játékos tapasztalati pontjait, a játékos fegyverét, a játékos által használt italokat fogja megjeleníteni.
 
 \begin{figure}[H]
     \centering
@@ -69,9 +67,9 @@ A HUD (Head Up Display) a játék során folyamatosan látható lesz, így a já
     \label{fig:Felhasználói felület}
 \end{figure}
 
-\subsection{Életerő és Energia}
+\subsection{Életpontok és Energia}
 
-A játékos karakterének életerő (HP) mutatja, hogy mennyire életben van. Az életerő csökken, ha a karakter sérüléseket szenved, és elérheti a nullát, ami halált eredményez. Az energia pedig a karakter futáshoz és cselekvésekhez szükséges energiaforrás. A megfelelő kezelése és felhasználása kulcsfontosságú a túléléshez és a harc hatékonyságához.
+A játékos karakterének életpontjai mutatják meg, hogy mennyi sebzést tudnak még elszenvedni mielőtt meghalna a karakterük. Az energia szint pedig a karakter futásához és cselekvéseihez szükséges energiaforrás. A megfelelő kezelése és felhasználása kulcsfontosságú a túléléshez és a harc hatékonyságához.
 
 \subsection{Fegyver Választás}
 
@@ -79,7 +77,7 @@ A játékosnak lehetősége van különböző fegyverek között választani, am
 
 \subsection{Harcolás Szörnyekkel}
 
-A játék során a játékosnak számos szörnnyel kell megküzdenie. A harcok izgalmasak és változatosak, és a játékosnak ki kell használnia a karaktere készségeit és fegyvereit a sikeres küzdelem érdekében. A szörnyek legyőzése tapasztalati pontokat (XP) és esetleges zsákmányt is eredményez.
+A játék során a játékosnak számos szörnnyel kell megküzdenie. A harcok izgalmasak és változatosak, és a játékosnak ki kell használnia a karaktere készségeit és fegyvereit a sikeres küzdelem érdekében. A szörnyek legyőzése tapasztalati pontokat és esetleges zsákmányt is eredményez.
 
 \subsection{Küldetések Felvétele}
 
@@ -89,11 +87,11 @@ A küldetések kiváló lehetőséget nyújtanak a karakterfejlődésre és a t�
 
 \subsection{Italok Vásárlása és Használata}
 
-A játékos aranyat szerezhet a játék során, amit italokra is fordíthat. Az italok különböző hatásokkal rendelkeznek, például életerő visszaállítás vagy energia szint növelés. Az italok stratégiai használata a túlélés és a harcok kulcsa lehet.
+A játékos aranyat szerezhet a játék során, amit italokra is fordíthat. Az italok különböző hatásokkal rendelkeznek, például életpont visszatöltés vagy energia szint növelés. Az italok stratégiai használata a túlélés és a harcok kulcsa lehet.
 
-\subsection{Statisztikák Növelése XP-ből}
+\subsection{Statisztikák Növelése tapasztalati pontokból}
 
-A játékos karaktere XP-t szerez a harcok és küldetések során. Az XP felhasználható a karakter statisztikáinak növelésére, például az erő, az ügyesség vagy a mágia terén. Ez lehetővé teszi a karakter fejlődését és a játékmenet testreszabását.
+A játékos karaktere tapasztalati pontokat szerez a harcok és küldetések során. Az XP felhasználható a karakter statisztikáinak növelésére, például az erő, az ügyesség vagy a mágia terén. Ez lehetővé teszi a karakter fejlődését és a játékmenet testreszabását.
 
 Ezen cselekvési lehetőségek összekapcsolva teremtenek egy gazdag és dinamikus játékélményt az Action RPG játékban, ahol a játékos döntései és cselekedetei hatással vannak a karakter fejlődésére és a játék világára.
 
