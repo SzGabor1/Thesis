@@ -15,7 +15,7 @@ Az is fontos tényező, hogy a játék érthetősége és használhatósága ne 
 
 A játékok szempontjából a grafika kulcsfontosságú elem. Egy gondosan kidolgozott vizuális megjelenés mélyebben elvonja a játékosokat a játék világába, ami növeli a játék élvezetét.
 
-Ezért fontos számomra, hogy saját magam készítsem el a rajzokat, ezzel is egyedivé téve a játékot, illetve a fejlesztés során egyszerűbben áthidalhatok majd a grafikai problémákat, hiszen nem kell harmadik féllel egyeztetnem. A pálya kirajzolásánál szeretnék megvalósítani hamis 3D-s hatást, hogy a játékosok számára élethűbbnek tűnjön a játék. 
+Ezért fontos számomra, hogy saját magam készítsem el a rajzokat, ezzel is egyedivé téve a játékot, illetve a fejlesztés során egyszerűbben áthidalhatóak a grafikai problémák, hiszen nem kell harmadik féllel egyeztetnem. A pálya kirajzolásánál szeretnék megvalósítani hamis 3D-s hatást, hogy a játékosok számára élethűbbnek tűnjön a játék. 
 
 
 \section{Menürendszer}
@@ -30,7 +30,7 @@ A menürendszernek általában a játékhoz illőnek kell lennie, hogy a játék
 \end{figure}
 
 \subsection{Felhasználói fiók}
-Felhasználói fiók létrehozása azért szükséges a játékomban, mivel szeretnék létrehozni egy ranglista rendszert, ahol a játékosok tudnak egymással versengeni, hogy ki hányszor vitte végig a játékot anélkül, hogy a karaktere egyszer is meghalt volna, miközben a szörnyek minden újrakezdést követően erősödnek. Ehhez a rendszerhez elengedhetetlen, hogy a játékosokat megtudjam különböztetni, illetve, hogy egy adatbázisban eltudjam tárolni a játékosok adatait.
+Felhasználói fiók létrehozása azért szükséges a játékomban, mivel szeretnék létrehozni egy ranglista rendszert, ahol a játékosok tudnak egymással versengeni, hogy ki hányszor vitte végig a játékot anélkül, hogy a karaktere egyszer is meghalt volna, miközben a szörnyek minden újrakezdést követően erősödnek. Ehhez a rendszerhez elengedhetetlen, hogy a játékosokat megtudjam különböztetni, illetve, hogy egy adatbázisban el tudjam tárolni a játékosok adatait.
 
 \begin{figure}[H]
     \centering
@@ -41,12 +41,11 @@ Felhasználói fiók létrehozása azért szükséges a játékomban, mivel szer
 
 \subsection{Főmenü funkciói}
 
-A bejelentkezést követően a játékosoknak három menüpont fog elérhetővé válni. Az egyik kiemelkedően fontos lehetőség a beállítások menüpont lesz, mivel általában itt találhatók a kulcsfontosságú funkciók módosítására szolgáló lehetőségek. Az én esetemben itt lesz elérhető a teljesképernyős mód beállítása. A beállítások menüpont alatt továbbá megtalálható lesz egy "Credits" opció is, ami tartalmazni fogja a készítő nevét és az elkészítés évét. A másik két menüpontnak pedig a játék indításával kell kapcsolatosnak lennie, mivel a játékosoknak lehetőségük lesz új karakter létrehozására, illetve meglévő mentésük betöltésére.
-
+A bejelentkezést követően három menüpont válik elérhetővé a játékosok számára. Az egyik kiemelkedően fontos lehetőség a beállítások menüpont, mivel általában itt találhatók a kulcsfontosságú funkciók módosítására szolgáló lehetőségek. Az én esetemben itt érhető el a teljesképernyős mód beállítása. A beállítások menüpont alatt továbbá megtalálható egy "Credits" opció is, ami tartalmazza a készítő nevét és az elkészítés évét. A másik két menüpont a játék indításával kapcsolatos: lehetőség van új karakter létrehozására, illetve meglévő mentésük betöltésére.
 
 \subsection{Játékon belüli menürendszer}
 
-A legtöbb játékban kiemelkedő jelentőségű a játékon belüli pillanatálj funkció, valamint egy belső menürendszer. Lényeges, hogy ezek könnyen elérhetőek legyenek, miközben nem zavarják a játékélményt. A játékosoknak lehetőségük lesz a játék közben is hozzáférni egy beállítások menühöz, amelyben a hangerőszintet is be tudják majd állítani. Ezen menü részét kell képeznie egy mentés funkciónak, ami a játék aktuális állapotának mentését teszi lehetővé, továbbá egy folytatás lehetőségnek, és egy kilépés opciónak, amely a játék bezárását szolgálja.
+A legtöbb játékban kiemelkedő jelentőségű a játékon belüli pillanat álj funkció, valamint egy belső menürendszer. Lényeges, hogy ezek könnyen elérhetőek legyenek, miközben nem zavarják a játékélményt. A játékosoknak lehetőségük van a játék közben is hozzáférni egy beállítások menühöz, amelyben a hangerőszintet is be tudják állítani. Ezen menü részét kell képeznie egy mentés funkciónak, ami a játék aktuális állapotának mentését teszi lehetővé, továbbá egy folytatás lehetőségnek, és egy kilépés opciónak, amely a játék bezárását szolgálja.
 
 
 \section{Felhasználói felület és a játékos cselekvési lehetőségei}
@@ -56,7 +55,7 @@ A játékokban fontos a jól megtervezett felhasználói felület, amely lehető
 
 \subsection{Felhasználói felület}
 
-A felhasználói felület megtervezése során, igyekeztem figyelni, a letisztultságra és a felhasználói élményre. Fontosnak tartottam, hogy a design egyszerű és könnyen átlátható legyen, hogy a felhasználó könnyedén megtalálja azokat a funkciókat és információkat, amelyekre szüksége van.
+A felhasználói felület megtervezése során, nagyon figyelni, a letisztultságra és a felhasználói élményre. Fontosnak tartottam, hogy a design egyszerű és könnyen átlátható legyen, hogy a felhasználó könnyedén megtalálja azokat a funkciókat és információkat, amelyekre szüksége van.
 
 A HUD (Head Up Display) a játék során folyamatosan látható lesz, így a játékosoknak nem kell külön menübe navigálniuk, hogy megtalálják a szükséges információkat. A HUD a játékos karakterének életpontjait, energia szintjét, a játékos aranyát, a játékos szintjét, a játékos tapasztalati pontjait, a játékos fegyverét, a játékos által használt italokat fogja megjeleníteni.
 

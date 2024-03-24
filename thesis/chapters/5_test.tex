@@ -9,14 +9,14 @@ A megvalósított játék mechanikák és elemek után fontosnak tartom, hogy a 
 A táska rendszer jelenleg elég helyet ad a játékosoknak, hogy tudják kezelni a játék során megvásárolt vagy felvett tárgyakat. Azonban ahogyan a játék fejlesztése fog haladni előre, elkerülhetetlen lesz, hogy több tárgy kerüljön a játékba, így a játékosoknak több helyre lesz szükségük. Ezért érdemes lenne a jelenlegi táska rendszert továbbfejleszteni, hogy több helyet biztosítson a játékosoknak, illetve szeretnék egy funkciót amellyel a táskában lévő tárgyakat lehessen sorba rendezni, hogy könnyebben megtalálják a kívánt tárgyat.
 
 \section{Pálya generálás}
-Jelenlega világ teljes mértékben statikus, azaz minden pályaelem előre meghatározott helyen van. Ezért érdemes lenne egy olyan funkciót hozzáadni a játékhoz, amely biztosítani tudja a véletlen elemeket a játékban.
+Jelenleg a világ teljes mértékben statikus, azaz minden pályaelem előre meghatározott helyen van. Ezért érdemes lenne egy olyan funkciót hozzáadni a játékhoz, amely biztosítani tudja a véletlen elemeket a játékban.
 
-Ilyen funkció lehet többek között, az entitások nem csak koorditáta alapján való elhelyezése, hanem egy zóna rendszer létrehozása, amely zóna méreteinek és helyzetének ismeretében azon belülre véletlenszerű pozícióra rajzolja ki az entitásokat.
+Ilyen funkció lehet többek között, az entitások nem csak koorditáta alapján való elhelyezése, hanem egy zóna rendszer létrehozása, amely zóna méreteinek és helyzetének ismeretében, azon belülre véletlenszerű pozícióra rajzolja ki az entitásokat.
 
-Másik szerintem hasonlóan fontos új funkció lenne, a véletlenszerű barlangok létrehozása. Jelenleg egy barlang található a játékban, ahol a főellenség található a legvégén. Viszont jó lenne bővíteni, hogy több kisebb barlang is legyen a játékban, amelyekben kisebb ellenfelek találhatóak, illetve lehetőséget biztosítson kincsek megszerzésére, akár jöbb fegyverre, több arany pénzre, itt is csak a képzelet tud határt szabni.
+Másik szerintem hasonlóan fontos új funkció lenne, a véletlenszerű barlangok létrehozása. Jelenleg egy barlang található a játékban, ahol a főellenség található a legvégén. Viszont jólenne bővíteni, hogy több kisebb barlang is legyen a játékban, amelyekben kisebb ellenfelek találhatóak, illetve lehetőséget biztosítson kincsek megszerzésére, akár jöbb fegyverre, több arany pénzre, itt is csak a képzelet tud határt szabni.
 
 \section{Ellenségek}
 
-Jelenleg minden ellenségnek ugyanazok a képességei vannak, azonban érdemes lenne egyedi képességeket adni nekik, hogy ne csak a kinézetükben legyenek különbözőek, hanem a képességeikben is. Jelenleg egy kivétel található, a varázsló amely tud a varázspálcájával egy varázsgömböt lőni a játékos felé. Viszont ezt a mechanikát is érdemes lenne teljes mértékben átdolgozni.
+Jelenleg minden ellenségnek ugyanazok a képességei vannak, azonban érdemes lenne egyedi képességeket adni nekik, hogy ne csak a kinézetükben legyenek különbözőek, hanem a képességeikben is. Jelenleg egy kivétel található, a varázsló, amely tud a varázspálcájával egy varázsgömböt lőni a játékos felé. Viszont ezt a mechanikát is érdemes lenne teljes mértékben átdolgozni.
 
-Ennek a vonzataként következne, hogy az osztályok struktúráját is át kellene gondolni, hiszen most csak egy ellenség osztály található amely különböző grafikával példányosítja gyakorlatilag ugyan azt a szörnyet. Ezért érdemes lenne szörny típúsonként külön osztályt definiálni, és ezután következhet majd az egyedi képességek megvalósítása.
+Ennek a vonzataként következne, hogy az osztályok struktúráját is át kellene gondolni, hiszen most csak egy ellenség osztály található, amely különböző grafikával példányosítja gyakorlatilag ugyan azt a szörnyet. Ezért érdemes lenne szörny típúsonként külön osztályt definiálni, és ezután következhet majd az egyedi képességek megvalósítása.
