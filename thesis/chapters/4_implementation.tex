@@ -11,8 +11,10 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=14.0truecm]{images/Aseprite.png}
-    \caption{Aseprite - Pixelart rajzoló program}
-    \label{fig:Aseprite}\cite{Aseprite}
+    \caption{Aseprite - Pixelart rajzoló program
+    \cite{Aseprite}}
+
+    \label{fig:Aseprite}
 \end{figure}
 
 
@@ -50,8 +52,9 @@ További rétegek lettek létrehozva az objektumok számára, minden típusú ob
 \begin{figure}[H]
     \centering
     \includegraphics[width=14.0truecm]{images/Tiled.png}
-    \caption{Tiled - Pálya szerkesztő}
-    \label{fig:Tiled}\cite{Tiled}
+    \caption{Tiled - Pálya szerkesztő
+    \cite{Tiled}}
+    \label{fig:Tiled}
 \end{figure}
 
 % \section{Megvalósított rendszerek bemutatása}
@@ -82,8 +85,9 @@ A főmenüben három menüpont található meg, az új játék létrehozása, me
 \begin{figure}[H]
     \centering
     \includegraphics[width=15.0truecm]{images/mainmenu.png}
-    \caption{Főmenü}
-    \label{fig:Főmenü}\cite{Főmenü}
+    \caption{Főmenü
+    \cite{Főmenü}}
+    \label{fig:Főmenü}
 \end{figure}
 
 
@@ -95,8 +99,9 @@ A nehézségi szint annyiban különbözik, hogy a "normal" módban, ha elfogyna
 \begin{figure}[H]
     \centering
     \includegraphics[width=15.0truecm]{images/newgame.png}
-    \caption{Új játék létrehozása}
-    \label{fig:Új játék létrehozása}\cite{NewGame}
+    \caption{Új játék létrehozása
+    \cite{NewGame}}
+    \label{fig:Új játék létrehozása}
 \end{figure}
 
 \subsection{Játékon belüli menü}
@@ -121,7 +126,7 @@ Amennyiben a menürendszer visszaadja a menuenums.GAME értéket, az azt jelenti
 Ez az osztály tehát létfontosságú szerepet játszik abban, hogy a játék működése zökkenőmentes legyen, és a kódban látható példa segítségével könnyen megérthető, hogyan történik mindez.
 
 
-\begin{python}[caption={Játék főciklusa},label=py:főciklus]
+\begin{python}[caption={Játék főciklusa \cite{main-loop}},label=py:főciklus]
     def run(self):
         while True:
             elif self.state == menuenums.GAME:
@@ -137,7 +142,7 @@ Ez az osztály tehát létfontosságú szerepet játszik abban, hogy a játék m
                 self.game_handler.run()
                 pygame.display.update()
                 self.clock.tick(Settings.FPS)
-\end{python}\cite{main-loop}
+\end{python}
 
 \subsection{A játék fő osztálya}
 \indent \indent Nagyon fontos szerepet tölt be a játék futása során, ez az osztály kezeli a mentéseket erről a következő szekcióban lesz szó bővebben. 
@@ -155,7 +160,7 @@ Megtalálható még obstacle, attack, és attackable felület csoportok is, amel
 Három fontos metódussal rendelkezik, az egyik a mozgás kezelése, a másik egy Sin függvény alapján ad vissza 0-255 értéket, ez később a kapott sebzés kijelzésére szolgál. A harmadik metódus az ütközés érzékelésre, kezelésére szolgál.
 
 Az ütközés érzékelés lényegében úgy működik, hogy nézzük az entitás mozgási irányát függőlegesen, vagy vízszintesen közlekedik, és az adott iránytól függően vizsgáljuk, hogy az entitás hitbox-a ütközik-e valamelyik akadállyal. Ha igen, akkor az entitás irány szerinti hitbox-át az akadály ellenkező irányű hitbox-ához igazítjuk, így megakadályozva az áthaladást. (Lásd. 4.2 programkód)
-\begin{python}[caption={Ütközés kezelés},label=py:Ütközés kezelés]
+\begin{python}[caption={Ütközés kezelés \cite{collision-handler}},label=py:Ütközés kezelés]
 def collision(self, direction):
     #horizontalis mozgas
     if direction == 'horizontal':
@@ -177,7 +182,7 @@ def collision(self, direction):
                         if self.direction.y < 0:
                         # felfele mozgas
                         self.hitbox.top = sprite.hitbox.bottom
-                    \end{python} \cite{collision-handler}
+                    \end{python} 
 
 A mozgást a move függvény segítségével hajtja végre, amelynek a lényege, hogy az entitás rendelkezik egy irány változóval, ami tárolja, hogy merre néz ez lehet (fel, le, jobbra, balra) és ezeknek az irányoknak a normalizálásával és a paraméterként megkapott sebesség értékkel meghatározza a következő pozícióját az entitásnak. Ez a pozíció módosítás a hitbox-ára vonatkozik, azaz arra a dobozra, amely az entitást körülveszi. Azért a hitbox-ot kell mozgatni, mert a szörnyek és karakterek képei a hitboxra vannak igazítva és nem a kép a hitboxhoz. Ez azért fontos, mert így megelőzhető az olyan hibák előfordulása, amit a hitbox és a kép közötti eltérés okozhatna.
 
@@ -212,7 +217,7 @@ Az osztály továbbá lehetővé teszi a karakternek, hogy tárgyakat használjo
 Első megközelítésemkor CSV (vesszővel elválaszott értékek) fájl formátumba mentettem ki a tervezőben létrehozott rétegeket. Egy ilyen dokumentum úgy néz ki, hogy ahova nem helyeztem le a tervezőben objektumot ott '-1' érték szerepel, ellentétben ahol van érték, ott a Tiled-ben betöltött és feldarabolt csempekészlet azonosító számai kerültek a dokumentumba. Ezt úgy kell elképzelni, mint egy nagy mátrixot. Az utolsó pillanatokig ezt a megközelítést alkalmaztam, mert ha már kész volt és működött, miért változtattam volna rajta. Végül mégis visszatértem erre a kérdéskörre és készítettem az alább olvasható kis egyszerű átalakító szkriptet. (Lásd \ref{py:csvtodict}) Ennek funkciója, a sok felesleges '-1' értéket kiszűrni, hogy a program futása közben, ne kelljen a betöltésnél rengeteg felesleges összehasonlítást végezni. Ezt úgy oldottam meg, hogy készítettem python szótárat a csempe azonosító számából, illetve annak a csv mátrixban elhelyezkedő koordinátáiról. (Lásd \ref{py:átalakított struktúra})
 
 
-\begin{python}[caption={CSV formátum dictionary formátumra konvertálása},label=py:csvtodict]
+\begin{python}[caption={CSV formátum dictionary formátumra konvertálása \cite{csv-to-dict}},label=py:csvtodict]
     import csv
     import json
     
@@ -237,17 +242,17 @@ Első megközelítésemkor CSV (vesszővel elválaszott értékek) fájl formát
     
     print(f"Dictionary saved to {python_file}")
     
-\end{python}\cite{csv-to-dict}
+\end{python}
 
 
-\begin{python}[caption={Minta az átalakított struktúrára}, label=py:átalakított struktúra]
+\begin{python}[caption={Minta az átalakított struktúrára \cite{dict-structure}
+    }, label=py:átalakított struktúra]
     {
         "i": 3,
         "j": 41,
         "value": 125
     },
-\end{python}\cite{dict-structure}
-
+\end{python}
 
 \subsubsection{Pálya generálás}
 
@@ -272,6 +277,7 @@ CSV fájl esetében:
 
 
 \subsection{Nem a játékos álltal vezértelt karakterek}
+\indent \indent Nem játékos által vezértelt karakterek azaz NPC-k egy kalandjáték során elengedhetetlen részei a történetnek és a játékmenetnek. Ahogy az összes többi szörny, játékos osztály is az Entity osztályból származik le, mert adott esetben szükség lehet mozgatásra és ütközés érzékelésre. Azonban a legtöbb esetben a játékos karaktere nem tudja megölni ezeket az entitásokat, mert a történet során szükség van rájuk. Ezért a játékos karaktere nem tud ütközni velük, és a szörnyekkel ellentétben nem tudnak támadni.
 
 \subsection{Ellenségek, szörnyek}
 
@@ -281,11 +287,6 @@ Az ellenségek is egy közös szülő osztályból származnak le, ez azért vol
 A szörnyek mozgását úgy valósítottam meg, hogy ha a játékos egy adott sugaron belül ér a szörnyhöz képest, ez az úgynevezett érzékelési sugár, akkor kiszámolom vektorokkal a játékos távolságát, és ha a távolság nagyobb, mint 0, azaz nem egy helyen állnak, akkor meghatározom az irányt a két vektor különbségének normalizálásával. A távolság érték azért fontos, hogy megállíptsa mikor ér a játékos karaktere a szörnyhöz támadási távolságon belülre. Az irány érték pedig a szörny mozgatásához szükséges.
 
 Három különböző státusszal rendelkezhet egy ellenség. Támadási státuszt kap, ha támadási sugaron belül tartózkodik a játékos karaktere, és ha egy bizonyos idő eltelt az előző támadás óta. Mozgás státuszt kap, ha a játékos karaktere a szörny érzékelési sugarán belül van, de nem támadási sugaron belül. Ha a játékos karaktere nincs az érzékelési sugarán belül, akkor pedig nyugalmi státuszt kap. Ezek a státuszok határozzák meg a szörnyek viselkedését és a megjelenített grafikát is a játék során.
-
-
-\subsection{Nem játékos álltal vezértelt karakterek}
-
-\indent \indent Nem játékos által vezértelt karakterek azaz NPC-k egy kalandjáték során elengedhetetlen részei a történetnek és a játékmenetnek. Ahogy az összes többi szörny, játékos osztály is az Entity osztályból származik le, mert adott esetben szükség lehet mozgatásra és ütközés érzékelésre. Azonban a legtöbb esetben a játékos karaktere nem tudja megölni ezeket az entitásokat, mert a történet során szükség van rájuk. Ezért a játékos karaktere nem tud ütközni velük, és a szörnyekkel ellentétben nem tudnak támadni.
 
 \subsection{Küldetést adó karakterek}
 
@@ -298,8 +299,8 @@ Az questgiver típusú NPC-k képesek egy előre megírt dialógus megjeleníté
 \begin{figure}[H]
     \centering
     \includegraphics[width=14.0truecm]{images/dialogue.png}
-    \caption{Dialógus}
-    \label{fig:Dialógus rendszer}\cite{dialogue}
+    \caption{Dialógus \cite{dialogue}}
+    \label{fig:Dialógus rendszer}
 \end{figure}
 
 \subsection{Kereskedő karakter}
@@ -313,8 +314,8 @@ Azt, hogy milyen tárgyakat adhat el egy bizonyos merchant, azt a Settings oszt�
 \begin{figure}[H]
     \centering
     \includegraphics[width=9.0truecm]{images/merchant.png}
-    \caption{Kereskedő karakter}
-    \label{fig:Merchant}\cite{Merchant}
+    \caption{Kereskedő karakter \cite{Merchant}}
+    \label{fig:Merchant}
 \end{figure}
 
 
@@ -327,8 +328,8 @@ Azt, hogy milyen tárgyakat adhat el egy bizonyos merchant, azt a Settings oszt�
 \begin{figure}[H]
     \centering
     \includegraphics[width=15.5truecm]{images/inventory.png}
-    \caption{Táksa rendszer}
-    \label{fig:Táska rendszer}\cite{backpack}
+    \caption{Táksa rendszer \cite{backpack}}
+    \label{fig:Táska rendszer}
 \end{figure}
 
 \subsection{Zsákmányolás}
@@ -344,8 +345,8 @@ Tárgyak felvétele a tárgy pozíciója és a játékos karakternéket távols�
 \begin{figure}[H]
     \centering
     \includegraphics[width=15.5truecm]{images/loots.png}
-    \caption{Zsákmányolás funkció}
-    \label{fig:Zsákmányolás funkció}\cite{loot-sys}
+    \caption{Zsákmányolás funkció \cite{loot-sys}}
+    \label{fig:Zsákmányolás funkció}
 \end{figure}
 
 
@@ -360,8 +361,8 @@ Ahogyan a többi látható objektum, ezek a fegyverek is a visible sprite csopor
 \begin{figure}[H]
     \centering
     \includegraphics[width=15.5truecm]{images/weapons.png}
-    \caption{A játékban megtalálható fegyverek}
-    \label{fig:A játékban megtalálható fegyverek}\cite{weapons}
+    \caption{A játékban megtalálható fegyverek \cite{weapons}}
+    \label{fig:A játékban megtalálható fegyverek}
 \end{figure}
 s
 
