@@ -6,7 +6,7 @@
 
 \subsection{Grafikus szerkesztő}
 
-\indent \indent Fontos kiemelni, hogy egy "pixelart" rajz stílusról beszélünk az esetemben, ezért kerestem olyan rajzprogramot amely minden igényemet kielégíti és könnyen kezelhető tapasztalatlan grafikusok számára is. A kiválaszott program az Aseprite volt, ebben készítettem minden játékban megtalálható grafikát.
+\indent \indent Fontos kiemelni, hogy egy "pixelart" rajz stílusról beszélünk az esetemben, ezért kerestem olyan rajzprogramot amely minden igényemet kielégíti és könnyen kezelhető tapasztalatlan grafikusok számára is. A kiválaszott program az Aseprite volt, ebben készítettem minden játékban megtalálható grafikát. (Lásd \ref{fig:Aseprite} ábra)
 
 \begin{figure}[H]
     \centering
@@ -45,9 +45,9 @@ Az egyszerű és intuitív felhasználói felülete miatt a Tiled ideális eszk�
 
 \indent \indent Kiemelkedően fontos volt a pálya elemeit különböző rétegekre szétválasztani, ezáltal megkönnyítve a fejlesztést és az egyes részek kezelését. A háttér szolgálatában álló csempéket például két rétegre osztottam: az egyikre a talajszintet, a másikra pedig a talajon megtalálható növényzetet helyeztem el. Ezt a két réteget együttesen exportáltam PNG formátumban, amelyet a játékban háttérképként használtam.Fontos megjegyezni, hogy a két háttér réteget nem mentettem külön CSV fájlba. Ennek oka az, hogy ezek a rétegek olyan elemeket tartalmaznak, amelyek statikusak és nincs velük semmiféle interakció a játék során. 
 
-Van még egy fontos réteg amik akadályként szolgálnak a játékos számára (Lásd 4.2. ábra piroskörvonal), ezeket a rétegeket a játékos nem tudja átlépni, ezáltal a játékmenetet befolyásolják.  
+Van még egy fontos réteg amik akadályként szolgálnak a játékos számára (Lásd \ref{fig:Tiled} ábra piroskörvonal), ezeket a rétegeket a játékos nem tudja átlépni, ezáltal a játékmenetet befolyásolják.  
 
-További rétegek lettek létrehozva az objektumok számára, minden típusú objektumot külön rétegen helyeztem el, így könnyen kezelhetőek és nem kell a kódban szűrést alkalmazni a különböző típusú objektumok használatakor.
+További rétegek lettek létrehozva az objektumok számára, minden típusú objektumot külön rétegen helyeztem el, így könnyen kezelhetőek és nem kell a kódban szűrést alkalmazni a különböző típusú objektumok használatakor. (Lásd \ref{fig:Tiled} ábra)
 
 \begin{figure}[H]
     \centering
@@ -78,15 +78,14 @@ Az osztály emellett definiálja a felhasználói felület színeit és stílusa
 \subsection{Főmenü}
 
 \indent \indent A játéknak elengedhetetlen része a főmenü, ami a bejelentkezés után válik elérhetővé a felhasználók számára. Biztosítok a játékosoknak offline azaz internet nélküli játszási lehetőséget, ilyenkor regisztráció és bejelentkezés nélkül használni lehet a játékot.
-A főmenüben három menüpont található meg, az új játék létrehozása, meglévő mentés betöltése, illetve a beállítások. (lásd. 4.3. ábra.)   
+A főmenüben három menüpont található meg, az új játék létrehozása, meglévő mentés betöltése, illetve a beállítások. (Lásd \ref{fig:Főmenü} ábra) 
 
 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=15.0truecm]{images/mainmenu.png}
-    \caption{Főmenü
-    \cite{Főmenü}}
+    \caption{Főmenü}
     \label{fig:Főmenü}
 \end{figure}
 
@@ -94,13 +93,12 @@ A főmenüben három menüpont található meg, az új játék létrehozása, me
 
 \subsection{Új játék létrehozása}
 \indent \indent Az új játék menüpont kiválasztása után a játékosnak meg kell adni a karakterének a nevét, illetve választhat különböző karakter kinézet közül. Ha be van jelentkezve a játékos, akkor van lehetősége nehézségi szintet is választani.
-A nehézségi szint annyiban különbözik, hogy a "normal" módban, ha elfogynak a játékos életpontjai, akkor a játék folytatódik tovább, újraéled egy bizonyos helyen. Viszont, ha a "challange"  módot választja, akkor három funkcióval bővül a játékmenet. Az első ilyen funkció, hogy ha elfogy a játékos életereje, akkor véglegesen meghal a karakter, és nem lesz lehetősége tovább folytatni azzal a bizonyos karakterrel a játékot. A második plusz funkció, hogy az összes küldetés teljesítése esetén a játék újrakezdődik, amely azt eredményezi, hogy a szörnyek erősödnek, és nagyobb kihívás lesz újra végigvinni az összes küldetést. Illetve tartalmaz egy ranglista menüpontot, amely jelzi a legügyesebb játékosok hányszor tudták a "challange" mód használatával végigvinni az összes küldetést. 
+A nehézségi szint annyiban különbözik, hogy a "normal" módban, ha elfogynak a játékos életpontjai, akkor a játék folytatódik tovább, újraéled egy bizonyos helyen. Viszont, ha a "challange"  módot választja, akkor három funkcióval bővül a játékmenet. Az első ilyen funkció, hogy ha elfogy a játékos életereje, akkor véglegesen meghal a karakter, és nem lesz lehetősége tovább folytatni azzal a bizonyos karakterrel a játékot. A második plusz funkció, hogy az összes küldetés teljesítése esetén a játék újrakezdődik, amely azt eredményezi, hogy a szörnyek erősödnek, és nagyobb kihívás lesz újra végigvinni az összes küldetést. Illetve tartalmaz egy ranglista menüpontot, amely jelzi a legügyesebb játékosok hányszor tudták a "challange" mód használatával végigvinni az összes küldetést. (Lásd \ref{fig:Új játék létrehozása} ábra)
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=15.0truecm]{images/newgame.png}
-    \caption{Új játék létrehozása
-    \cite{NewGame}}
+    \caption{Új játék létrehozása}
     \label{fig:Új játék létrehozása}
 \end{figure}
 
@@ -123,10 +121,10 @@ A 4.1. programkód részletesen bemutatja, hogyan kell megvalósítani ezt a fő
 
 Amennyiben a menürendszer visszaadja a menuenums.GAME értéket, az azt jelenti, hogy a játékot választottuk a menüből, és belépünk a játék főciklusába. Itt történik minden, a játékmenet során szükséges frissítés, eseménykezelés és kirajzolás. Itt szabjuk meg a képfrissítés mértékét is a 'self.clock.tick(Settings.FPS)' sorral, amely a másodpercenként kirajzolandó képkockák számát határozza meg.
 
-Ez az osztály tehát létfontosságú szerepet játszik abban, hogy a játék működése zökkenőmentes legyen, és a kódban látható példa segítségével könnyen megérthető, hogyan történik mindez.
+Ez az osztály tehát létfontosságú szerepet játszik abban, hogy a játék működése zökkenőmentes legyen, és a kódban látható példa segítségével könnyen megérthető, hogyan történik mindez. (Lásd \ref{py:főciklus} programkód)
 
 
-\begin{python}[caption={Játék főciklusa \cite{main-loop}},label=py:főciklus]
+\begin{python}[caption={Játék főciklusa},label=py:főciklus]
     def run(self):
         while True:
             elif self.state == menuenums.GAME:
@@ -159,8 +157,8 @@ Megtalálható még obstacle, attack, és attackable felület csoportok is, amel
 \indent \indent Ez az osztály egy szülő osztály, ami azt jelenti, hogy ebből származnak le más osztályok és felhasználják minden tulajdonságát, illetve metódusait is.  
 Három fontos metódussal rendelkezik, az egyik a mozgás kezelése, a másik egy Sin függvény alapján ad vissza 0-255 értéket, ez később a kapott sebzés kijelzésére szolgál. A harmadik metódus az ütközés érzékelésre, kezelésére szolgál.
 
-Az ütközés érzékelés lényegében úgy működik, hogy nézzük az entitás mozgási irányát függőlegesen, vagy vízszintesen közlekedik, és az adott iránytól függően vizsgáljuk, hogy az entitás hitbox-a ütközik-e valamelyik akadállyal. Ha igen, akkor az entitás irány szerinti hitbox-át az akadály ellenkező irányű hitbox-ához igazítjuk, így megakadályozva az áthaladást. (Lásd. 4.2 programkód)
-\begin{python}[caption={Ütközés kezelés \cite{collision-handler}},label=py:Ütközés kezelés]
+Az ütközés érzékelés lényegében úgy működik, hogy nézzük az entitás mozgási irányát függőlegesen, vagy vízszintesen közlekedik, és az adott iránytól függően vizsgáljuk, hogy az entitás hitbox-a ütközik-e valamelyik akadállyal. Ha igen, akkor az entitás irány szerinti hitbox-át az akadály ellenkező irányű hitbox-ához igazítjuk, így megakadályozva az áthaladást. (Lásd \ref{py:Ütközés kezelés} programkód)
+\begin{python}[caption={Ütközés kezelés},label=py:Ütközés kezelés]
 def collision(self, direction):
     #horizontalis mozgas
     if direction == 'horizontal':
@@ -214,10 +212,10 @@ Az osztály továbbá lehetővé teszi a karakternek, hogy tárgyakat használjo
 \subsubsection{Pálya generáláshoz szükséges adatok}
 
 \indent \indent Említettem a korábbi fejezetben, a pálya megtervezését a \textbf{Tiled}-el végeztem. (Lásd \ref{subsec:Tiled}) 
-Első megközelítésemkor CSV (vesszővel elválaszott értékek) fájl formátumba mentettem ki a tervezőben létrehozott rétegeket. Egy ilyen dokumentum úgy néz ki, hogy ahova nem helyeztem le a tervezőben objektumot ott '-1' érték szerepel, ellentétben ahol van érték, ott a Tiled-ben betöltött és feldarabolt csempekészlet azonosító számai kerültek a dokumentumba. Ezt úgy kell elképzelni, mint egy nagy mátrixot. Az utolsó pillanatokig ezt a megközelítést alkalmaztam, mert ha már kész volt és működött, miért változtattam volna rajta. Végül mégis visszatértem erre a kérdéskörre és készítettem az alább olvasható kis egyszerű átalakító szkriptet. (Lásd \ref{py:csvtodict}) Ennek funkciója, a sok felesleges '-1' értéket kiszűrni, hogy a program futása közben, ne kelljen a betöltésnél rengeteg felesleges összehasonlítást végezni. Ezt úgy oldottam meg, hogy készítettem python szótárat a csempe azonosító számából, illetve annak a csv mátrixban elhelyezkedő koordinátáiról. (Lásd \ref{py:átalakított struktúra})
+Első megközelítésemkor CSV (vesszővel elválaszott értékek) fájl formátumba mentettem ki a tervezőben létrehozott rétegeket. Egy ilyen dokumentum úgy néz ki, hogy ahova nem helyeztem le a tervezőben objektumot ott '-1' érték szerepel, ellentétben ahol van érték, ott a Tiled-ben betöltött és feldarabolt csempekészlet azonosító számai kerültek a dokumentumba. Ezt úgy kell elképzelni, mint egy nagy mátrixot. Az utolsó pillanatokig ezt a megközelítést alkalmaztam, mert ha már kész volt és működött, miért változtattam volna rajta. Végül mégis visszatértem erre a kérdéskörre és készítettem az alább olvasható kis egyszerű átalakító szkriptet. (Lásd \ref{py:csvtodict} programkód) Ennek funkciója, a sok felesleges '-1' értéket kiszűrni, hogy a program futása közben, ne kelljen a betöltésnél rengeteg felesleges összehasonlítást végezni. Ezt úgy oldottam meg, hogy készítettem python szótárat a csempe azonosító számából, illetve annak a csv mátrixban elhelyezkedő koordinátáiról. (Lásd \ref{py:átalakított struktúra} programkód)
 
 
-\begin{python}[caption={CSV formátum dictionary formátumra konvertálása \cite{csv-to-dict}},label=py:csvtodict]
+\begin{python}[caption={CSV formátum dictionary formátumra konvertálása},label=py:csvtodict]
     import csv
     import json
     
@@ -245,7 +243,7 @@ Első megközelítésemkor CSV (vesszővel elválaszott értékek) fájl formát
 \end{python}
 
 
-\begin{python}[caption={Minta az átalakított struktúrára \cite{dict-structure}
+\begin{python}[caption={Minta az átalakított struktúrára
     }, label=py:átalakított struktúra]
     {
         "i": 3,
@@ -294,12 +292,12 @@ Három különböző státusszal rendelkezhet egy ellenség. Támadási státusz
 
 A Questgiver NPC típust a World osztály példányosítja és a példányok osztályváltozóinak inicializálásakor olvassa be a saját id-jéhez tartozó küldetéseket a Settings osztály npc\_data dictionary-jéből. Majd ezt követően a World osztály létrehozz a Player osztályból is egy példányt, amely egészen a LevelHandler osztálytól kap paraméterként egy questgivers\_quest\_setup függvényt, amely egy trigger után vizsgálja hogy a játékos álltal már teljesített küldetés szerepel\-e még Questgivernél és, ha igen, akkor kitörli azt. Ezáltal elkerülhető a küldetés ismétlődése. Küldetést nem lehet kihagyni, mindegyiket sorban kell teljesíteni, ahogy a történet halad előre.
 
-Az questgiver típusú NPC-k képesek egy előre megírt dialógus megjelenítésére (Lásd. 4.5 ábra), amelyben a játékos választhat két lehetőség közül, amelyek a küldetés elfogadása vagy elutasítása. A választás megerősítése történhet a kurzornak a gomb felé mozgatásával, ezután egy kattintással, vagy a billentyűzet segítségével egyaránt. A dialógus ablak megnyitásához szükséges a játékos karakteréhez viszonyított távolság érzékelése, mert egy beszélgetés során közel kell állni a kommunikációban résztvevő többi szereplőhöz, ezt hasonló módon vizsgálom, mint ahogy a szörnyek esetében az érzékelési távolságot vizsgáltam. Illetve dialógus megjelenítéséhez még szükséges, hogy az adott NPC rendelkezzen a soron következő küldetés azonosítójával is.   
+Az questgiver típusú NPC-k képesek egy előre megírt dialógus megjelenítésére (Lásd \ref{fig:Dialógus rendszer} ábra), amelyben a játékos választhat két lehetőség közül, amelyek a küldetés elfogadása vagy elutasítása. A választás megerősítése történhet a kurzornak a gomb felé mozgatásával, ezután egy kattintással, vagy a billentyűzet segítségével egyaránt. A dialógus ablak megnyitásához szükséges a játékos karakteréhez viszonyított távolság érzékelése, mert egy beszélgetés során közel kell állni a kommunikációban résztvevő többi szereplőhöz, ezt hasonló módon vizsgálom, mint ahogy a szörnyek esetében az érzékelési távolságot vizsgáltam. Illetve dialógus megjelenítéséhez még szükséges, hogy az adott NPC rendelkezzen a soron következő küldetés azonosítójával is.   
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=14.0truecm]{images/dialogue.png}
-    \caption{Dialógus \cite{dialogue}}
+    \caption{Dialógus}
     \label{fig:Dialógus rendszer}
 \end{figure}
 
@@ -307,14 +305,14 @@ Az questgiver típusú NPC-k képesek egy előre megírt dialógus megjeleníté
 
 \indent \indent Egy kalandjátékban az előrehaladás mellett fontos, hogy a nehezen megszerzett tárgyakkal, esetünkben az arannyal lehessen mit kezdeni, ezért egy Merchant NPC típus létrehozását láttam a legjobb ötletnek, mert rengeteg különböző módon fel lehet őket használni. 
 
-Egyenlőre csak bájital árusításra szolgáló merchant van a játékban (élet visszatöltő, energiát növelő, sebzést növelő bájitalok árusítására szolgál). A továbbfejleszétsi lehetőségek bekezdésben jobban kifejtem, mikre lehet még használni a merchant típusú NPC-t.  Ahogyan a Questgivernél, itt is a távolságvizsgálat alapján és egy gomb lenyomására történik a vásárlásra szolgáló ablak megjelenítése (Lásd. 4.6 ábra). A vásárlás során a játékos karakterének az egyenlege/arany mennyisége csökken, és a vásárolt tárgyak a hátizsákjába kerülnek.
+Egyenlőre csak bájital árusításra szolgáló merchant van a játékban (élet visszatöltő, energiát növelő, sebzést növelő bájitalok árusítására szolgál). A továbbfejleszétsi lehetőségek bekezdésben jobban kifejtem, mikre lehet még használni a merchant típusú NPC-t.  Ahogyan a Questgivernél, itt is a távolságvizsgálat alapján és egy gomb lenyomására történik a vásárlásra szolgáló ablak megjelenítése (Lásd \ref{fig:Merchant} ábra). A vásárlás során a játékos karakterének az egyenlege/arany mennyisége csökken, és a vásárolt tárgyak a hátizsákjába kerülnek.
 
 Azt, hogy milyen tárgyakat adhat el egy bizonyos merchant, azt a Settings osztályból egy dictionaryben tárolt id-k beolvasása befolyásolja. Illetve a Settings osztály tartalmaz egy Items dictionary-t is, amelyben a tárgyakra vonatkozó adatokat tárolom. Ilyen adatok például a tárgy neve, típusa, ára hatása és annak mennyisége (Például mennyi plusz erő-t ad a tárgy), illetve a időtartamra vonatkozó megkötést és talán a legfontosabbat a grafikának az elérési útvonalát.  
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=9.0truecm]{images/merchant.png}
-    \caption{Kereskedő karakter \cite{Merchant}}
+    \caption{Kereskedő karakter}
     \label{fig:Merchant}
 \end{figure}
 
@@ -323,12 +321,12 @@ Azt, hogy milyen tárgyakat adhat el egy bizonyos merchant, azt a Settings oszt�
 
 \indent \indent Az Inventory azaz táska rendszer, fontos szerepet kap a játék folyamán, mert a merchanttól megvásárolt tárgyak ebbe a hátizsákba kerülnek bele és a játékos ezeket tudja felhasználni amikor szükségét érzi.
 
-Öt szabad férőhellyel rendelkezik a táska, ezért jól meg kell válogatni melyek azok a fontos tárgyak, amelyeket oda szeretne helyezni a játékos. Első nekifutásra egy futószalag szerű működést képzeltem el a táska rendszernek, amelyet azért gondoltam jó ötletnek, mert a megvalósítása egyszerű volt, mert megszerzett tárgyak időrendben kerültek bele a táskába. Viszont felvetette a problémát, hogy ha más sorrendben esik kézre a felhasználónak, vagy nincs helye akkor mit tud tenni. Ezért úgy döntöttem, hogy jobb megoldás lenne, ha az azonos tárgyakkat össze lehetne húzni egy férőhelyre, ezáltal kényelmesebbé válna a használata a táskának. Megtartottam a futószalag szerű megoldást, viszont kiegészült a tárgy összevonással, amelyet egy számláló bevezetésével oldottam meg, amely jelzi a felhasználónak, hogy még mennyi található nála abból az adott tárgyból. (Lásd. 4.7 ábra)
+Öt szabad férőhellyel rendelkezik a táska, ezért jól meg kell válogatni melyek azok a fontos tárgyak, amelyeket oda szeretne helyezni a játékos. Első nekifutásra egy futószalag szerű működést képzeltem el a táska rendszernek, amelyet azért gondoltam jó ötletnek, mert a megvalósítása egyszerű volt, mert megszerzett tárgyak időrendben kerültek bele a táskába. Viszont felvetette a problémát, hogy ha más sorrendben esik kézre a felhasználónak, vagy nincs helye akkor mit tud tenni. Ezért úgy döntöttem, hogy jobb megoldás lenne, ha az azonos tárgyakkat össze lehetne húzni egy férőhelyre, ezáltal kényelmesebbé válna a használata a táskának. Megtartottam a futószalag szerű megoldást, viszont kiegészült a tárgy összevonással, amelyet egy számláló bevezetésével oldottam meg, amely jelzi a felhasználónak, hogy még mennyi található nála abból az adott tárgyból. (Lásd \ref{fig:Táska rendszer} ábra)
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=15.5truecm]{images/inventory.png}
-    \caption{Táksa rendszer \cite{backpack}}
+    \caption{Táksa rendszer}
     \label{fig:Táska rendszer}
 \end{figure}
 
@@ -340,12 +338,12 @@ A drop\_loot függvényt a szörnyek példányosításkor paraméterként megkap
 
 A kirajzolása a felvehető tárgyaknak a visible sprite csoport frissítésével történik, mert a Loots osztály ahogy a többi objektum is, a pygame.sprite.Sprite osztályból származik le.  
 
-Tárgyak felvétele a tárgy pozíciója és a játékos karakternéket távolságát vizsgálva történik, ha elég közel megy a játékos a tárgyhoz, akkor kitörli a loots listából a felvett tárgyat és az értékeit hozzáadja a játékos karakterének a tulajdonságaiban tárolt értékekhez.
+Tárgyak felvétele a tárgy pozíciója és a játékos karakternéket távolságát vizsgálva történik, ha elég közel megy a játékos a tárgyhoz, akkor kitörli a loots listából a felvett tárgyat és az értékeit hozzáadja a játékos karakterének a tulajdonságaiban tárolt értékekhez. (Lásd \ref{fig:Zsákmányolás funkció} ábra)
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=15.5truecm]{images/loots.png}
-    \caption{Zsákmányolás funkció \cite{loot-sys}}
+    \caption{Zsákmányolás funkció}
     \label{fig:Zsákmányolás funkció}
 \end{figure}
 
@@ -356,12 +354,12 @@ Tárgyak felvétele a tárgy pozíciója és a játékos karakternéket távols�
 
 Ezen harcolásra szolgáló eszközök kirajzolása a támadás gomb lenyomása után történik a Weapon osztály példányosításával. Ez az osztály a játékos karaktere által kezében tartott fegyver rajzolja ki a képernyőre. Mivel fontosnak tartottam, hogy mozgás közben is lehessen támadni, illetve legyen egy csapás/suhintás animáció, ezért egy frissítés funkciót vezettem be, amely mindig a játékos karakterének legutóbbi helyzetét, és irányát vizsgálja, majd ezekre az adatokra alapozva frissíti a már létrehozott felületet. A csapás animációt mind a négy irányban külön-külön kellett megtervezni, mert a fegyverek nem egyformán néznek ki minden irányból. Sinus függvény segítségével valósítottam meg a megjelenített fegyver forgatását egy amplitúdó értékkel, amely a fegyver típusától függően változhat.
 
-Ahogyan a többi látható objektum, ezek a fegyverek is a visible sprite csoport része, viszont rendelekzik az attack\_sprites csoporttal is, amely segít megkülönböztetni a többi felülettől a fegyvereket, ezáltal támogatva a támadási logika megvalósítását. A támadási logika egy metódus, amely ezeken az attack\_sprites csoporton végig iterál, és vizsgálja az attackable\_sprites felületekkel való ütközést, amelyeket olyan entitások kaphatnak, amelyekkel a játékos meg tud küzdeni a játék során, legyen az egy szörny vagy akár egy kiüthető fűcsomó.  
+Ahogyan a többi látható objektum, ezek a fegyverek is a visible sprite csoport része, viszont rendelekzik az attack\_sprites csoporttal is, amely segít megkülönböztetni a többi felülettől a fegyvereket, ezáltal támogatva a támadási logika megvalósítását. A támadási logika egy metódus, amely ezeken az attack\_sprites csoporton végig iterál, és vizsgálja az attackable\_sprites felületekkel való ütközést, amelyeket olyan entitások kaphatnak, amelyekkel a játékos meg tud küzdeni a játék során, legyen az egy szörny vagy akár egy kiüthető fűcsomó. (Lásd \ref{fig:A játékban megtalálható fegyverek} ábra)
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=15.5truecm]{images/weapons.png}
-    \caption{A játékban megtalálható fegyverek \cite{weapons}}
+    \caption{A játékban megtalálható fegyverek}
     \label{fig:A játékban megtalálható fegyverek}
 \end{figure}
 s
