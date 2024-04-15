@@ -20,7 +20,7 @@
 
 \subsection{Rajzok elkészítése}
 
- A rajzok elkészítése két fő részből állt, a pálya tervezéséből és a karakterek, valamint a környezet kialakításából. A pálya tervezéséhez a korábban említett Ninja Adventure Tileset szolgált mintaként, melyből az összes pálya elemét saját kezűleg rajzoltam meg. A karakterek és környezet rajzainak elkészítésénél pedig meglévő rajzokat használtam inspirációként, és ezeket egészítettem ki saját kreatív ötleteimmel.
+ A rajzok elkészítése két fő részből állt, a pálya tervezéséből és a karakterek, valamint a környezet kialakításából. A pálya tervezéséhez a korábban említett Ninja Adventure Tileset szolgált mintaként, melyből az összes pálya elemét saját kezűleg rajzoltam meg. A karakterek és környezet rajzainak elkészítésénél pedig különböző rajzokat használtam inspirációként, és ezek alapján készítettem el a saját rajzaimat.
 
 \subsubsection{Pálya}
  A pályaelemek létrehozásánál kiemelkedően fontos volt figyelnem arra, hogy a csempék harmonikusan illeszkedjenek egymáshoz, ezáltal kellemes és összefüggő látványt teremtve.
@@ -68,11 +68,7 @@ Az egyszerű és intuitív felhasználói felülete miatt amit a \ref{fig:Tiled}
 Van még egy fontos réteg amik akadályként szolgálnak a játékos számára (Lásd \ref{fig:Tiled} ábra piroskörvonal), ezeket a rétegeket a játékos nem tudja átlépni, ezáltal a játékmenetet befolyásolják.  
 
 További rétegek lettek létrehozva az objektumok számára, minden típusú objektumot külön rétegen helyeztem el, így könnyen kezelhetőek és nem kell a kódban szűrést alkalmazni a különböző típusú objektumok használatakor.
-A következő elemeknek hoztam létre saját réteget: talajnak, talajon megjelenő részleteknek ez ahogy az előbb említettem össze tartoznak. A játék során kiüthető objektumoknak, jelenleg a fűcsomók. Nem kiüthető objektumoknak, például házak vagy fák. Berendezési tárgyaknak, mivel azokat talajként szerettem volna kezelni, de nem felülírva a hátteret. Falaknak az pályahatárok meghatározásához. Illetve nem utolsó sorban az entitásoknak, hogy milyen pozícióra rajzolja ki őket a játék.  (Lásd \ref{fig:Tiled} ábra)
-
-
-% \section{Megvalósított rendszerek bemutatása}
-%  A következő szekcióban a játékban megvalósított rendszereket mutatom be, amelyek a játékmenetet és a felhasználói élményt szolgálják. A rendszerek részletes leírása mellett bemutatom a kód részleteket is, amelyek segítségével könnyen megérthető, hogyan történik az egyes rendszerek működése.
+Réteget hoztam létre a játék során kiüthető objektumoknak, jelenleg a fűcsomók. Nem kiüthető objektumoknak, például házak vagy fák. Berendezési tárgyaknak, mivel azokat talajként szerettem volna kezelni, de nem felülírva a hátteret. Illetve nem utolsó sorban az entitásoknak, hogy milyen pozícióra rajzolja ki őket a játék. (Lásd \ref{fig:Tiled} ábra)
 
 \section{Felhasználói felület és beállítások kezelése}
 
@@ -398,10 +394,7 @@ A Questgiver NPC (küldetést adó karakter) típust a World osztályban példá
    amely egészen a LevelHandler osztálytól (amit már korábban említettem \ref{subsec:Pálya kezelése}) kap
     paraméterként egy questgivers\_quest\_setup függvényt amely egy trigger (aktiváló esemény) után vizsgálja,
      hogy a játékos álltal már teljesített küldetés szerepel\-e még Questgivernél. Igaz visszatérési érték esetén kitörli azt,
-      ezáltal elkerülhető a küldetés ismétlődése. Küldetést nem lehet kihagyni, mindegyiket sorban kell teljesíteni,
-       ahogy a történet halad előre. Elutasítás esetén a küldetés nem törlődik, csak a dialógus ablak bezáródik és a játékban a linearitása miatt nem lehet tovább haladni.
-
-
+      ezáltal elkerülhető a küldetés ismétlődése. 
        \begin{figure}[H]
         \centering
         \includegraphics[width=12.0truecm]{images/dialogue.png}
@@ -409,7 +402,8 @@ A Questgiver NPC (küldetést adó karakter) típust a World osztályban példá
         \label{fig:Dialógus rendszer}
     \end{figure}
     
-Az questgiver típusú NPC-k képesek egy előre megírt dialógus megjelenítésére (Lásd \ref{fig:Dialógus rendszer} ábra), amelyben a játékos választhat két lehetőség közül, amelyek a küldetés elfogadása vagy elutasítása. A választás megerősítése történhet a kurzornak a gomb felé mozgatásával, ezután egy kattintással, vagy a billentyűzet segítségével egyaránt. A dialógus ablak megnyitásához szükséges a játékos karakteréhez viszonyított távolság érzékelése, mert egy beszélgetés során közel kell állni a kommunikációban résztvevő többi szereplőhöz, ezt hasonló módon vizsgálom, mint ahogy a szörnyek esetében az érzékelési távolságot vizsgáltam. Illetve dialógus megjelenítéséhez még szükséges, hogy az adott NPC rendelkezzen a soron következő küldetés azonosítójával is.   
+Az questgiver típusú NPC-k képesek egy előre megírt dialógus megjelenítésére (Lásd \ref{fig:Dialógus rendszer} ábra), amelyben a játékos választhat két lehetőség közül, amelyek a küldetés elfogadása vagy elutasítása. A választás megerősítése történhet a kurzornak a gomb felé mozgatásával, ezután egy kattintással, vagy a billentyűzet segítségével egyaránt. A dialógus ablak megnyitásához szükséges a játékos karakteréhez viszonyított távolság érzékelése, mert egy beszélgetés során közel kell állni a kommunikációban résztvevő többi szereplőhöz, ezt hasonló módon vizsgálom, mint ahogy a szörnyek esetében az érzékelési távolságot vizsgáltam. Illetve dialógus megjelenítéséhez még szükséges, hogy az adott NPC rendelkezzen a soron következő küldetés azonosítójával is. Küldetést nem lehet kihagyni, mindegyiket sorban kell teljesíteni,
+ahogy a történet halad előre. Elutasítás esetén a küldetés nem törlődik, csak a dialógus ablak bezáródik, a játékban a linearitása miatt nem lehet tovább haladni.
 
 
 
