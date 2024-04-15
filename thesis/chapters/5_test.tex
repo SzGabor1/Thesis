@@ -1,13 +1,13 @@
 \chapter{Továbbfejlesztési lehetőségek}
 
-\indent \indent A megvalósított játék mechanikák és elemek után fontosnak tartom, hogy megemlítsem az olyan aspektusait a játéknak, amelyeket a jövőben érdemes lenne továbbfejleszteni, illetve olyan funkciókat, amelyeket érdemes lenne még hozzáadni a játékhoz.
+ A megvalósított játék mechanikák és elemek után fontosnak tartom, hogy megemlítsem az olyan aspektusait a játéknak, amelyeket a jövőben érdemes lenne továbbfejleszteni, illetve olyan funkciókat, amelyeket érdemes lenne még hozzáadni a játékhoz.
 
 
 \section{Táska rendszer}
-\indent \indent A táska rendszer jelenleg elég helyet ad a játékosoknak, hogy tudják kezelni a játék során megvásárolt vagy felvett tárgyakat. Azonban ahogyan a játék fejlesztése fog haladni előre, elkerülhetetlen lesz, hogy több tárgy kerüljön a játékba, így a játékosoknak több helyre lesz szükségük. Ezért érdemes lenne a jelenlegi táska rendszert továbbfejleszteni, hogy több helyet biztosítson a játékosoknak, illetve szeretnék egy funkciót, amellyel a táskában lévő tárgyakat lehessen sorba rendezni, hogy könnyebben megtalálják a kívánt tárgyat.
+ A táska rendszer jelenleg elég helyet ad a játékosoknak, hogy tudják kezelni a játék során megvásárolt vagy felvett tárgyakat. Azonban ahogyan a játék fejlesztése fog haladni előre, elkerülhetetlen lesz, hogy több tárgy kerüljön a játékba, így a játékosoknak több helyre lesz szükségük. Ezért érdemes lenne a jelenlegi táska rendszert továbbfejleszteni, hogy több helyet biztosítson a játékosoknak, illetve szeretnék egy funkciót, amellyel a táskában lévő tárgyakat lehessen sorba rendezni, hogy könnyebben megtalálják a kívánt tárgyat.
 
 \section{Pálya generálás}
-\indent \indent Jelenleg a világ teljes mértékben statikus, azaz minden pályaelem előre meghatározott helyen van. Ezért érdemes lenne egy olyan funkciót hozzáadni a játékhoz, amely biztosítani tudja a véletlen elemeket a játékban.
+ Jelenleg a világ teljes mértékben statikus, azaz minden pályaelem előre meghatározott helyen van. Ezért érdemes lenne egy olyan funkciót hozzáadni a játékhoz, amely biztosítani tudja a véletlen elemeket a játékban.
 
 Ilyen funkció lehet többek között, az entitások nem csak koorditáta alapján való elhelyezése, hanem egy zóna rendszer létrehozása, amely zóna méreteinek és helyzetének ismeretében, azon belülre véletlenszerű pozícióra rajzolja ki az entitásokat.
 
@@ -15,9 +15,9 @@ Másik szerintem hasonlóan fontos új funkció lenne, a véletlenszerű barlang
 
 \section{Ellenségek}
 
-\indent \indent Jelenleg minden ellenségnek ugyanazok a képességei, azonban érdemes lenne egyedi képességeket adni nekik, hogy ne csak a kinézetükben legyenek különbözőek. Jelenleg egy kivétel található, a varázsló, amely tud a varázspálcájával egy varázsgömböt lőni a játékos felé. Viszont ezt a mechanikát is érdemes lenne teljes mértékben átdolgozni.
+ Jelenleg minden ellenségnek ugyanazok a képességei, azonban érdemes lenne egyedi képességeket adni nekik, hogy ne csak a kinézetükben legyenek különbözőek. Jelenleg egy kivétel található, a varázsló, amely tud a varázspálcájával egy varázsgömböt lőni a játékos felé. Viszont ezt a mechanikát is érdemes lenne teljes mértékben átdolgozni.
 
 Ennek a vonzataként következne, hogy az osztályok struktúráját is át kellene gondolni, hiszen most csak egy ellenség osztály található, amely különböző grafikával példányosítja gyakorlatilag ugyanazt a szörnyet. Ezért érdemes lenne szörny típusonként külön osztályt definiálni, és ezután következhet majd az egyedi képességek megvalósítása.
 
 \section{Felhasználói fiókok biztonságosabbá tétele}
-\indent \indent A játék jelenlegi állapotában a felhasználók jelszavait titkosítva tárolja az adatbázisban, azonban érdemes lenne továbbfejleszteni a bejelentkezés után történő műveleteket. A megvalósítás során nem használtam a token alapú autentikációt, amely egy sokkal biztonságosabb megoldás lenne az adatok védelmére, hanem ha sikeresen bejelentkezett a játékos, akkor a karakterének adataival történik a későbbiekben a beazonosítás. Ez azért rossz megközelítés, mert a JSON struktúra ismeretében akár felül lehet írni bárki mentését vagy törölni azt. A token alapú autentikáció során a felhasználó adatai nem kerülnek tárolásra a szerveren, hanem egy token-t kap, amelyet minden kérésnél elküld a szervernek, így a szerver tudja, hogy a felhasználó be van jelentkezve, és hozzáférhet az adott erőforráshoz, ezzel ellehetetlenítve az illetékteleneknek a hozzáférést. 
+ A játék jelenlegi állapotában a felhasználók jelszavait titkosítva tárolja az adatbázisban, azonban érdemes lenne továbbfejleszteni a bejelentkezés után történő műveleteket. A megvalósítás során nem használtam a token alapú autentikációt, amely egy sokkal biztonságosabb megoldás lenne az adatok védelmére, hanem ha sikeresen bejelentkezett a játékos, akkor a karakterének adataival történik a későbbiekben a beazonosítás. Ez azért rossz megközelítés, mert a JSON struktúra ismeretében akár felül lehet írni bárki mentését vagy törölni azt. A token alapú autentikáció során a felhasználó adatai nem kerülnek tárolásra a szerveren, hanem egy token-t kap, amelyet minden kérésnél elküld a szervernek, így a szerver tudja, hogy a felhasználó be van jelentkezve, és hozzáférhet az adott erőforráshoz, ezzel ellehetetlenítve az illetékteleneknek a hozzáférést. 
