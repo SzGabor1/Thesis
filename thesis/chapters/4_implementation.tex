@@ -20,10 +20,10 @@
 
 \subsection{Rajzok elkészítése}
 
- A rajzok elkészítése két fő részből állt, a pálya tervezéséből és a karakterek, valamint a környezet kialakításából. A pálya tervezéséhez a korábban említett Ninja Adventure Tileset szolgált mintaként, melyből az összes pálya elemét saját kezűleg rajzoltam meg. A karakterek és környezet rajzainak elkészítésénél pedig különböző rajzokat használtam inspirációként, és ezek alapján készítettem el a saját rajzaimat.
+ A rajzok elkészítése két fő részből állt, a pálya tervezéséből és a karakterek, valamint a környezet kialakításából. A pálya tervezéséhez a korábban említett Ninja Adventure Tileset szolgált mintaként, az összes pályaelemet saját kezűleg rajzoltam meg. A karakterek és környezet rajzainak elkészítésénél pedig különböző rajzokat használtam inspirációként, és ezek alapján készítettem el a saját rajzaimat.
 
 \subsubsection{Pálya}
- A pályaelemek létrehozásánál kiemelkedően fontos volt figyelnem arra, hogy a csempék harmonikusan illeszkedjenek egymáshoz, ezáltal kellemes és összefüggő látványt teremtve.
+ A pályaelemek létrehozásánál kiemelkedően fontos volt figyelnem arra, hogy a csempék (lásd \ref{fig:Csempekészlet}) harmonikusan illeszkedjenek egymáshoz, ezáltal kellemes és összefüggő látványt teremtve.
 
 \begin{figure}[H]
     \centering
@@ -33,7 +33,7 @@
 \end{figure}
 
 \subsubsection{Entitások}
- Karakterek és szörnyek megtervezése annyiban tért el, hogy ott figyelni kellett az animációra is, mert élethű mozgást szerettem volna utánozni. Egy ilyen mozgás animáció 4-6 képből áll, amelyeket egymás után lejátszva érhető el a kívánt hatás. Illetve, mivel 4 különböző irányba tudnak haladni ezek az entitások, ezért 4 különböző animációt kellett elkészítenem, amelyeket a játék során a karakter irányának megfelelően tudtam lejátszani, ez látható a \ref{fig:Aseprite} ábrán.
+ Karakterek és szörnyek (lásd \ref{fig:Entitások}) megtervezése annyiban tért el, hogy ott figyelni kellett az animációra is, mert élethű mozgást szerettem volna utánozni. Egy ilyen mozgás animáció 4-6 képből áll, amelyeket egymás után lejátszva érhető el a kívánt hatás. Illetve, mivel 4 különböző irányba tudnak haladni ezek az entitások, ezért 4 különböző animációt kellett elkészítenem, amelyeket a játék során a karakter irányának megfelelően tudtam lejátszani, ez látható a \ref{fig:Aseprite} ábrán.
 
 \begin{figure}[H]
     \centering
@@ -47,11 +47,11 @@
 
 \subsection{Tiled}
 \label{subsec:Tiled}
- A pálya megtervezéséhez a Tiled-et \cite{Tiled} választottam, ami egy népszerű térképszerkesztő szoftver, amelyet játékfejlesztők használnak a 2D-s játékok pályáinak tervezésére és szerkesztésére.   A Tiled egy nyílt forráskódú program, így ingyenesen elérhető és széles körben használt az indie játékfejlesztők körében.
+ A pálya megtervezéséhez a Tiled-ot \cite{Tiled} választottam, ami egy népszerű térképszerkesztő szoftver, amelyet játékfejlesztők használnak a 2D-s játékok pályáinak tervezésére és szerkesztésére.   A Tiled egy nyílt forráskódú program, így ingyenesen elérhető és széles körben használt az indie játékfejlesztők körében.
 
-Ez a szoftver lehetővé teszi a felhasználók számára, hogy könnyen létrehozzanak és testreszabjanak térképeket, amelyeket különböző játékkeretrendszerekbe integrálhatnak. A Tiled számos funkciót kínál, mint például csempekészletek használata, rétegek kezelése, objektumok lehelyezése rácshálóra, ezzel elkerülve a rétegen belüli átfetéseket. (Lásd \ref{fig:Tiled} ábra) Valamint az exportálás különböző formátumokban, például CSV (Coma-Separated Values) vagy TMX (Tiled Map XML).
+Ez a szoftver lehetővé teszi a felhasználók számára, hogy könnyen létrehozzanak és testreszabjanak térképeket, amelyeket különböző játékkeretrendszerekbe integrálhatnak. A Tiled (Lásd \ref{fig:Tiled} ábra) számos funkciót kínál, mint például csempekészletek használata, rétegek kezelése, objektumok lehelyezése rácshálóra, ezzel elkerülve a rétegen belüli átfetéseket. Valamint az exportálás különböző formátumokban, például CSV (Coma-Separated Values) vagy TMX (Tiled Map XML).
 
-Az egyszerű és intuitív felhasználói felülete miatt amit a \ref{fig:Tiled}-es ábrán is lehet látni, a Tiled ideális eszköz a játékfejlesztők számára, akik az apró részletekre is figyelő térképeket szeretnének készíteni játékaikhoz. Az XML alapú TMX formátum kompatibilis a legtöbb játékmotorral, így a Tiled segítségével készült térképek könnyen beilleszthetők a fejlesztési folyamatba.
+Az egyszerű és intuitív felhasználói felülete miatt a Tiled ideális eszköz a játékfejlesztők számára, akik az apró részletekre is figyelő térképeket szeretnének készíteni játékaikhoz. Az XML alapú TMX formátum kompatibilis a legtöbb játékmotorral, így a Tiled segítségével készült térképek könnyen beilleszthetők a fejlesztési folyamatba.
 
 \begin{figure}[H]
     \centering
@@ -63,12 +63,12 @@ Az egyszerű és intuitív felhasználói felülete miatt amit a \ref{fig:Tiled}
 
 \subsection{Tervezés} \label{subsec:Tervezés}
 
- Kiemelkedően fontos volt a pálya elemeit különböző rétegekre szétválasztani, ezáltal megkönnyítve a fejlesztést és az egyes részek kezelését. A háttér szolgálatában álló csempéket például két rétegre osztottam: az egyikre a talajszintet, a másikra pedig a talajon megtalálható növényzetet helyeztem el. Ezt a két réteget együttesen exportáltam PNG formátumban, amelyet a játékban háttérképként használtam. Fontos megjegyezni, hogy a két háttér réteget nem mentettem külön CSV fájlba. Ennek oka az, hogy ezek a rétegek olyan elemeket tartalmaznak, amelyek statikusak és nincs velük semmiféle interakció a játék során. 
+ Kiemelkedően fontos volt a pálya elemeit különböző rétegekre szétválasztani, ezáltal megkönnyítve a fejlesztést és az egyes részek kezelését. A háttér szolgálatában álló csempéket például két rétegre osztottam: az egyikre a talajszintet, a másikra pedig a talajon megtalálható növényzetet helyeztem el. Ezt a két réteget együttesen exportáltam PNG formátumban, amelyet a játékban háttérképként használtam. Fontos megjegyezni, hogy a két háttér réteget nem mentettem külön CSV fájlba. Ennek oka az, hogy ezek a rétegek olyan elemeket tartalmaznak, amelyek statikusak, és nincs velük semmiféle interakció a játék során. 
 
-Van még egy fontos réteg amik akadályként szolgálnak a játékos számára (Lásd \ref{fig:Tiled} ábra piroskörvonal), ezeket a rétegeket a játékos nem tudja átlépni, ezáltal a játékmenetet befolyásolják.  
+Van még egy fontos réteg, amik akadályként szolgálnak a játékos számára (Lásd \ref{fig:Tiled} ábra piros körvonal), ezt a réteget a játékos nem tudja átlépni, ezáltal a játékmenetet befolyásolják.  
 
-További rétegek lettek létrehozva az objektumok számára, minden típusú objektumot külön rétegen helyeztem el, így könnyen kezelhetőek és nem kell a kódban szűrést alkalmazni a különböző típusú objektumok használatakor.
-Réteget hoztam létre a játék során kiüthető objektumoknak, jelenleg a fűcsomók. Nem kiüthető objektumoknak, például házak vagy fák. Berendezési tárgyaknak, mivel azokat talajként szerettem volna kezelni, de nem felülírva a hátteret. Illetve nem utolsó sorban az entitásoknak, hogy milyen pozícióra rajzolja ki őket a játék. (Lásd \ref{fig:Tiled} ábra)
+További rétegek lettek létrehozva az objektumok számára, minden típusú objektumot külön rétegen helyeztem el, így könnyen kezelhetőek, és nem kell a kódban szűrést alkalmazni a különböző típusú objektumok használatakor.
+Réteget hoztam létre a játék során kiüthető objektumoknak, ahova jelenleg a fűcsomók tartoznak. Nem kiüthető objektumoknak, mint például házak vagy fák. Berendezési tárgyaknak, mivel azokat talajként szerettem volna kezelni, de nem felülírva a hátteret. Illetve nem utolsó sorban az entitásoknak, hogy milyen pozícióra rajzolja ki őket a játék. (Lásd \ref{fig:Tiled} ábra)
 
 \section{Felhasználói felület és beállítások kezelése}
 
